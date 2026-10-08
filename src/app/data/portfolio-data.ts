@@ -64,8 +64,8 @@ export const PERSONAL_INFO = {
   email: "pushprajbhati2164@gmail.com",
   linkedin: "https://linkedin.com/in/pushprajsinghbhati",
   github: "https://github.com/pushprajsinghbhati",
-  resumePath: "/Pushpraj_Singh_Bhati_Resume.pdf",
-  profileImage: "/pushpraj-photo.png",
+  resumePath: "Pushpraj_Singh_Bhati_Resume.pdf",
+  profileImage: "pushpraj-photo.png",
   stats: [
     { label: "Years Experience", value: "5+", detail: "Full-stack & engineering leadership" },
     { label: "Projects Delivered", value: "25+", detail: "Production web apps & microservices" },
@@ -82,7 +82,7 @@ export const PROJECTS: Project[] = [
     category: "Full-Stack & Cloud",
     description: "Designed a region-aware architecture on AWS serving 6 international regions (UK, US, Asia) from 3 distributed SQL Server databases, with a unified GlobalUserId identity model and one shared codebase.",
     detailedDescription: "Architected and implemented end-to-end region-aware infrastructure for Noosom, a digital life-story archival platform. Enabled dynamic database connection routing per user geographic locality while maintaining centralized user profiles and global single sign-on. Reduced cross-continental latency by over 55% and eliminated data sovereignty conflicts.",
-    image: "/projects/noosom.jpg",
+    image: "projects/noosom.jpg",
     tags: ["Angular 12+", "C#", ".NET Core Web API", "SQL Server", "AWS", "SignalR", "Bunny CDN"],
     metrics: ["6 Global Regions", "3 Sharded SQL DBs", "99.9% Uptime", "55% Latency Drop"],
     highlights: [
@@ -101,7 +101,7 @@ export const PROJECTS: Project[] = [
     category: "Cloud & Media",
     description: "Engineered a production-grade TUS resumable upload system for massive video/image assets with chunk retry and real-time ETA, paired with an automated FFmpeg server-side transcoding pipeline.",
     detailedDescription: "Replaced unreliable standard HTTP multipart uploads with a resilient TUS protocol implementation. Added chunk retry logic, client pause/resume capabilities, ETA calculators, and automatic cleanup of abandoned chunks. Integrated an FFmpeg worker pipeline that transcodes unsupported device codecs into web-compatible MP4/WebM formats instantly at upload.",
-    image: "/projects/media-pipeline.jpg",
+    image: "projects/media-pipeline.jpg",
     tags: [".NET Core", "TUS Protocol", "FFmpeg", "Bunny CDN", "Brotli/Gzip", "WebSockets"],
     metrics: ["60% Faster Load", "Zero Browser Freezes", "100% Resume Rate", "Multi-codec Support"],
     highlights: [
@@ -120,7 +120,7 @@ export const PROJECTS: Project[] = [
     category: "Architecture",
     description: "Replaced third-party commercial Syncfusion dependency with a bespoke high-performance Media File Manager supporting 50-60 EXIF metadata fields, bulk actions, and CDN caching, saving ~INR 1 lakh/month.",
     detailedDescription: "Designed an in-house Digital Asset Management system handling hundreds of thousands of user photographs and memories. Implemented deep EXIF/geolocation extraction, automated facial focus, smart thumbnail generation, and multi-tier Bunny CDN caching. Eliminated expensive monthly vendor licenses while unlocking complete design autonomy.",
-    image: "/projects/media-pipeline.jpg",
+    image: "projects/media-pipeline.jpg",
     tags: ["Angular", "C#", "ASP.NET Core", "SQL Server", "Bunny CDN", "Image Sharp", "SCSS"],
     metrics: ["₹1,00,000/mo Saved", "60+ Metadata Fields", "Sub-100ms Previews", "Zero Freeze UI"],
     highlights: [
@@ -139,7 +139,7 @@ export const PROJECTS: Project[] = [
     category: "Full-Stack & Cloud",
     description: "Architected a unified mission-control Admin Panel enabling management to configure users, master datasets, payment tiers, system feature flags, and multi-region routing without developer intervention.",
     detailedDescription: "Constructed an administrative suite that streamlined executive and customer support operations. Built robust role-based access control (RBAC), multi-tenant user impersonation for troubleshooting, dynamic regional routing switches, payment reconciliation logs, and real-time business health telemetry.",
-    image: "/projects/admin-portal.jpg",
+    image: "projects/admin-portal.jpg",
     tags: ["Angular", "ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "JWT", "Tailwind"],
     metrics: ["100% Admin Autonomy", "Role-Based ACL", "Live Telemetry", "Instant Audit Trail"],
     highlights: [
@@ -158,7 +158,7 @@ export const PROJECTS: Project[] = [
     category: "FinTech & Payments",
     description: "Architected and delivered universal payment flows integrating Cashfree (India UPI/Cards), Stripe (International), and Apple In-App Purchases (iOS), leveraging Apple startup programs to reduce overhead.",
     detailedDescription: "Engineered a hardened, webhook-driven billing core supporting multi-currency pricing, recurring subscription state machines, prorations, and tax compliance. Carefully navigated strict Apple App Store guidelines while delivering seamless localized payment experiences for Indian and global users.",
-    image: "/projects/payments-engine.jpg",
+    image: "projects/payments-engine.jpg",
     tags: [".NET Core Web API", "Stripe API", "Cashfree SDK", "Apple StoreKit API", "SQL Server", "Webhooks"],
     metrics: ["3 Gateways Unified", "Sub-1s Webhooks", "Zero Reconciliation Loss", "30% Lower Fee Structure"],
     highlights: [
@@ -177,7 +177,7 @@ export const PROJECTS: Project[] = [
     category: "Real-Time Systems",
     description: "Built a persistent bi-directional communication backbone with SignalR and WebSockets for chat, live comments, user presence indicators, and task progress, eliminating repetitive API polling.",
     detailedDescription: "Replaced high-frequency client polling with lightweight, event-driven WebSocket sockets backed by ASP.NET Core SignalR. Engineered client-side auto-reconnection protocols with message queue replay, preserving chat integrity and battery life on mobile devices.",
-    image: "/projects/signalr-realtime.jpg",
+    image: "projects/signalr-realtime.jpg",
     tags: ["SignalR", "WebSockets", "ASP.NET Core", "Angular RxJS", "SQL Server", "JWT Auth"],
     metrics: ["100% Polling Eliminated", "<15ms Broadcast Latency", "Auto Reconnect", "18k+ Sockets"],
     highlights: [
@@ -196,7 +196,7 @@ export const PROJECTS: Project[] = [
     category: "Enterprise Systems",
     description: "Engineered complex formula evaluation algorithms, dynamic pricing matrix grids, and high-throughput SQL transaction processing for large-scale enterprise workflows.",
     detailedDescription: "Engineered high-density data grids and dynamic formula compilation engines capable of calculating multi-factor rate adjustments across thousands of records simultaneously. Integrated comprehensive audit logging and bulk database upserts using Entity Framework Core and T-SQL stored procedures.",
-    image: "/projects/provider-calculator.jpg",
+    image: "projects/provider-calculator.jpg",
     tags: ["C#", ".NET Core", "SQL Server", "Entity Framework Core", "DevExpress", "T-SQL"],
     metrics: ["Sub-second Calculations", "Thousands of Records", "Complex Matrix Logic", "Zero Calculation Drift"],
     highlights: [
