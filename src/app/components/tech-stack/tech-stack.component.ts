@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppIconComponent } from '../icons/icons.component';
 import {
@@ -35,7 +35,7 @@ import {
         <!-- Grid: Left Visual Network Canvas + Right Proficiency Bars -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <!-- Left: Interactive Architectural Node Network (SVG) -->
-          <div class="lg:col-span-7 rounded-3xl bg-[#0c101a] border border-white/[0.1] p-6 sm:p-8 relative overflow-hidden backdrop-blur-md shadow-2xl">
+          <div class="lg:col-span-7 rounded-3xl bg-[#0c101a] border border-white/[0.1] p-4 sm:p-8 relative overflow-hidden backdrop-blur-md shadow-2xl">
             <!-- Header info -->
             <div class="flex items-center justify-between pb-4 border-b border-white/[0.08]">
               <div class="flex items-center gap-2">
@@ -45,60 +45,96 @@ import {
                 </span>
               </div>
               <span class="text-[11px] font-mono text-slate-400">
-                Hover node to inspect links
+                <span class="hidden sm:inline">Hover node to inspect links</span>
+                <span class="sm:hidden text-amber-400 font-semibold">Tap &amp; Pan to inspect</span>
               </span>
             </div>
 
-            <!-- Interactive Graph Container -->
-            <div class="relative w-full aspect-[4/3] sm:aspect-[16/11] mt-4 flex items-center justify-center">
-              <!-- SVG Connecting Lines -->
-              <svg class="absolute inset-0 w-full h-full pointer-events-none">
-                @for (conn of networkConnections; track $index) {
-                  @if (getNode(conn.from) && getNode(conn.to)) {
-                    <line
-                      [attr.x1]="getNode(conn.from)!.x + '%'"
-                      [attr.y1]="getNode(conn.from)!.y + '%'"
-                      [attr.x2]="getNode(conn.to)!.x + '%'"
-                      [attr.y2]="getNode(conn.to)!.y + '%'"
-                      [attr.stroke]="isConnHighlighted(conn.from, conn.to) ? 'rgba(245, 158, 11, 0.85)' : 'rgba(255, 255, 255, 0.12)'"
-                      [attr.stroke-width]="isConnHighlighted(conn.from, conn.to) ? '2.5' : '1'"
-                      [attr.stroke-dasharray]="isConnHighlighted(conn.from, conn.to) ? 'none' : '3,3'"
-                      class="transition-all duration-300"
-                    />
-                  }
-                }
-              </svg>
-
-              <!-- Render Technology Nodes -->
-              @for (node of techNetwork; track node.id) {
-                <button
-                  (mouseenter)="hoveredNode = node.id"
-                  (mouseleave)="hoveredNode = null"
-                  [style.left.%]="node.x"
-                  [style.top.%]="node.y"
-                  style="transform: translate(-50%, -50%);"
-                  class="absolute z-10 transition-all duration-300 rounded-2xl flex items-center justify-center group focus:outline-none cursor-pointer"
-                  [ngClass]="[
-                    node.id === 'dotnet'
-                      ? 'px-5 py-3.5 bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-black font-extrabold shadow-[0_0_35px_rgba(245,158,11,0.5)] border-2 border-amber-300 animate-pulse-subtle'
-                      : node.size === 'md'
-                      ? 'px-3.5 py-2 bg-[#121826] border border-white/[0.15] text-slate-100 font-bold hover:border-amber-400 hover:shadow-[0_0_20px_rgba(245,158,11,0.3)]'
-                      : 'px-2.5 py-1.5 bg-[#0f1420] border border-white/[0.08] text-slate-300 font-medium text-xs hover:border-sky-400',
-                    hoveredNode && !isNodeConnected(node.id) ? 'opacity-30 scale-95' : 'opacity-100 scale-100'
-                  ]"
-                >
-                  <span
-                    class="font-mono text-center select-none"
-                    [ngClass]="node.id === 'dotnet' ? 'text-sm sm:text-base tracking-wide font-extrabold' : node.size === 'md' ? 'text-xs sm:text-sm font-bold' : 'text-[11px]'"
-                  >
-                    {{ node.name }}
-                  </span>
-                </button>
-              }
+            <!-- Mobile Gesture Indicator -->
+            <div class="flex sm:hidden items-center justify-between py-1.5 px-2.5 text-xs font-mono text-amber-300 bg-amber-500/10 border border-amber-500/20 rounded-xl my-3 shadow-[0_0_12px_rgba(245,158,11,0.15)]">
+              <span class="inline-flex items-center gap-1.5">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                </span>
+                <span>Pan &amp; tap nodes to inspect</span>
+              </span>
+              <span class="inline-flex items-center gap-1 text-amber-400 font-bold">
+                <span>Pan</span>
+                <span class="inline-block animate-bounce-x">↔</span>
+              </span>
             </div>
 
+            <!-- Interactive Graph Scroll/Pan Container (Guarantees nodes never compress on mobile) -->
+            <div
+              #graphScrollContainer
+              class="relative w-full overflow-x-auto pb-2 pt-1 no-scrollbar touch-pan-x cursor-grab"
+            >
+              <div class="relative min-w-[560px] sm:min-w-0 w-full aspect-[16/11] flex items-center justify-center select-none">
+                <!-- SVG Connecting Lines -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none">
+                  @for (conn of networkConnections; track $index) {
+                    @if (getNode(conn.from) && getNode(conn.to)) {
+                      <line
+                        [attr.x1]="getNode(conn.from)!.x + '%'"
+                        [attr.y1]="getNode(conn.from)!.y + '%'"
+                        [attr.x2]="getNode(conn.to)!.x + '%'"
+                        [attr.y2]="getNode(conn.to)!.y + '%'"
+                        [attr.stroke]="isConnHighlighted(conn.from, conn.to) ? 'rgba(245, 158, 11, 0.85)' : 'rgba(255, 255, 255, 0.12)'"
+                        [attr.stroke-width]="isConnHighlighted(conn.from, conn.to) ? '2.5' : '1'"
+                        [attr.stroke-dasharray]="isConnHighlighted(conn.from, conn.to) ? 'none' : '3,3'"
+                        class="transition-all duration-300"
+                      />
+                    }
+                  }
+                </svg>
+
+                <!-- Render Technology Nodes -->
+                @for (node of techNetwork; track node.id) {
+                  <button
+                    (click)="toggleNode(node.id)"
+                    (mouseenter)="hoveredNode = node.id"
+                    (mouseleave)="hoveredNode = null"
+                    [style.left.%]="node.x"
+                    [style.top.%]="node.y"
+                    style="transform: translate(-50%, -50%);"
+                    class="absolute z-10 transition-all duration-300 rounded-2xl flex items-center justify-center group focus:outline-none cursor-pointer"
+                    [ngClass]="[
+                      node.id === 'dotnet'
+                        ? 'px-4 py-2.5 sm:px-5 sm:py-3.5 bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-black font-extrabold shadow-[0_0_35px_rgba(245,158,11,0.5)] border-2 border-amber-300 animate-pulse-subtle'
+                        : node.size === 'md'
+                        ? 'px-3 py-1.5 sm:px-3.5 sm:py-2 bg-[#121826] border border-white/[0.15] text-slate-100 font-bold hover:border-amber-400 hover:shadow-[0_0_20px_rgba(245,158,11,0.3)]'
+                        : 'px-2 py-1 sm:px-2.5 sm:py-1.5 bg-[#0f1420] border border-white/[0.08] text-slate-300 font-medium text-xs hover:border-sky-400',
+                      hoveredNode && !isNodeConnected(node.id) ? 'opacity-30 scale-95' : 'opacity-100 scale-100',
+                      hoveredNode === node.id ? 'ring-2 ring-amber-400 shadow-[0_0_25px_rgba(245,158,11,0.6)] scale-105 z-20' : ''
+                    ]"
+                  >
+                    <span
+                      class="font-mono text-center select-none"
+                      [ngClass]="node.id === 'dotnet' ? 'text-xs sm:text-base tracking-wide font-extrabold' : node.size === 'md' ? 'text-[11px] sm:text-sm font-bold' : 'text-[10px] sm:text-[11px]'"
+                    >
+                      {{ node.name }}
+                    </span>
+                  </button>
+                }
+              </div>
+            </div>
+
+            <!-- Active Node Connections Banner -->
+            @if (hoveredNode && getNode(hoveredNode)) {
+              <div class="mt-3 p-3 rounded-2xl bg-amber-500/10 border border-amber-500/25 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs font-mono text-amber-300 animate-fadeIn">
+                <span class="font-bold flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                  <span>{{ getNode(hoveredNode)!.name }} Connected With:</span>
+                </span>
+                <span class="text-slate-300 text-[11px] truncate">
+                  {{ getConnectedNodeNames(hoveredNode).join(' • ') }}
+                </span>
+              </div>
+            }
+
             <!-- Bottom Status legend -->
-            <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-slate-400">
+            <div class="pt-4 mt-2 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-slate-400">
               <div class="flex items-center gap-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
                 <span>Core Engine: .NET Core &amp; C#</span>
@@ -113,16 +149,16 @@ import {
           <!-- Right: Skill Proficiency Panel with Header, Body, Footer architecture -->
           <div class="lg:col-span-5 space-y-6">
             <!-- Category Switcher Tabs -->
-            <div class="flex rounded-xl bg-white/[0.04] p-1 border border-white/[0.08]">
+            <div class="flex rounded-xl bg-white/[0.04] p-1 border border-white/[0.08] overflow-x-auto no-scrollbar gap-1">
               @for (cat of skillsCategories; track cat.category; let idx = $index) {
                 <button
                   (click)="activeCategory = idx"
-                  class="flex-1 py-2 text-xs font-mono font-medium rounded-lg transition-all cursor-pointer"
+                  class="flex-1 min-w-[70px] py-2 px-2 text-xs font-mono font-medium rounded-lg transition-all cursor-pointer whitespace-nowrap text-center"
                   [ngClass]="activeCategory === idx
-                    ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-sm'
+                    ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-sm font-bold'
                     : 'text-slate-400 hover:text-white'"
                 >
-                  {{ cat.category.split(' ')[0] }}
+                  {{ getTabLabel(cat.category) }}
                 </button>
               }
             </div>
@@ -190,16 +226,44 @@ import {
   `,
   styles: []
 })
-export class TechStackComponent {
+export class TechStackComponent implements AfterViewInit {
   hoveredNode: string | null = null;
   activeCategory: number = 0;
+
+  @ViewChild('graphScrollContainer') graphScrollContainer?: ElementRef<HTMLDivElement>;
 
   skillsCategories = SKILLS_CATEGORIES;
   techNetwork = TECH_NETWORK;
   networkConnections = NETWORK_CONNECTIONS;
 
+  ngAfterViewInit() {
+    // Auto-center horizontal scroll on mobile so the core .NET node is front-and-center
+    if (this.graphScrollContainer?.nativeElement) {
+      const el = this.graphScrollContainer.nativeElement;
+      if (el.scrollWidth > el.clientWidth) {
+        el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+      }
+    }
+  }
+
+  toggleNode(nodeId: string) {
+    this.hoveredNode = this.hoveredNode === nodeId ? null : nodeId;
+  }
+
+  getTabLabel(cat: string): string {
+    // Strip trailing commas, symbols, or extra words
+    return cat.split(/[,\s&]+/)[0].replace(/[^\w]/g, '');
+  }
+
   getNode(id: string) {
     return this.techNetwork.find((n) => n.id === id);
+  }
+
+  getConnectedNodeNames(nodeId: string): string[] {
+    const connectedIds = this.networkConnections
+      .filter((c) => c.from === nodeId || c.to === nodeId)
+      .map((c) => (c.from === nodeId ? c.to : c.from));
+    return connectedIds.map((id) => this.getNode(id)?.name || id);
   }
 
   isConnHighlighted(from: string, to: string): boolean {

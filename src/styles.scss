@@ -464,3 +464,18 @@ body.portfolio-body {
     opacity: 0;
   }
 }
+
+@keyframes bounceX {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+.animate-bounce-x {
+  display: inline-block;
+  animation: bounceX 1.2s ease-in-out infinite;
+}
+

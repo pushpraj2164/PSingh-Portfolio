@@ -50,10 +50,10 @@ import { PROJECTS, Project } from '../../data/portfolio-data';
         </div>
 
         <!-- Category Filter Pills -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar mb-8">
+        <div class="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar mb-6">
           @for (cat of categories; track cat) {
             <button
-              (click)="activeCategory = cat"
+              (click)="onCategoryChange(cat)"
               class="px-4 py-2 text-xs font-mono font-medium rounded-xl whitespace-nowrap transition-all duration-200 cursor-pointer"
               [ngClass]="activeCategory === cat
                 ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.2)]'
@@ -64,14 +64,58 @@ import { PROJECTS, Project } from '../../data/portfolio-data';
           }
         </div>
 
+        <!-- Mobile Animated Scroll & Swipe Indicator (Matches Obsidian + Radiant Amber Theme) -->
+        <div class="flex lg:hidden flex-col gap-2.5 mb-6 px-1">
+          <div class="flex items-center justify-between">
+            <!-- Pulsing Amber Indicator Badge with animated arrow -->
+            <div class="flex items-center gap-2 text-xs font-mono text-amber-300 bg-amber-500/10 border border-amber-500/25 px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+              </span>
+              <span>Swipe to explore ({{ activeProjectIndex + 1 }}/{{ filteredProjects.length }})</span>
+              <span class="inline-block animate-bounce-x text-amber-400 font-bold">→</span>
+            </div>
+
+            <!-- Mobile Navigation Tap Buttons -->
+            <div class="flex items-center gap-1.5">
+              <button
+                (click)="handleScroll('left')"
+                [disabled]="activeProjectIndex === 0"
+                class="p-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-slate-300 hover:text-white disabled:opacity-25 disabled:cursor-not-allowed cursor-pointer transition-all active:scale-95"
+                aria-label="Previous project"
+              >
+                <app-icon name="chevron-left" className="w-4 h-4"></app-icon>
+              </button>
+              <button
+                (click)="handleScroll('right')"
+                [disabled]="activeProjectIndex >= filteredProjects.length - 1"
+                class="p-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-slate-300 hover:text-white disabled:opacity-25 disabled:cursor-not-allowed cursor-pointer transition-all active:scale-95"
+                aria-label="Next project"
+              >
+                <app-icon name="chevron-right" className="w-4 h-4"></app-icon>
+              </button>
+            </div>
+          </div>
+
+          <!-- Glowing Amber Progress Bar -->
+          <div class="w-full h-1 bg-white/[0.06] rounded-full overflow-hidden">
+            <div
+              class="h-full bg-gradient-to-r from-amber-500 via-amber-400 to-amber-300 rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(245,158,11,0.5)]"
+              [style.width.%]="filteredProjects.length > 0 ? ((activeProjectIndex + 1) / filteredProjects.length) * 100 : 100"
+            ></div>
+          </div>
+        </div>
+
         <!-- Projects Horizontal / Grid Track -->
         <div
           #scrollContainerRef
-          class="flex gap-6 overflow-x-auto pb-8 pt-2 no-scrollbar snap-x snap-mandatory"
+          (scroll)="onTrackScroll()"
+          class="flex gap-4 sm:gap-6 overflow-x-auto pb-8 pt-2 no-scrollbar snap-x snap-mandatory touch-pan-x"
         >
           @for (project of filteredProjects; track project.id) {
             <div
-              class="project-card group relative w-full sm:w-[380px] lg:w-[440px] shrink-0 snap-start flex flex-col rounded-3xl bg-[#0d121c]/90 border border-white/[0.09] hover:border-amber-500/40 backdrop-blur-md overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(0,0,0,0.6)] cursor-pointer"
+              class="project-card group relative w-[86vw] xs:w-[350px] sm:w-[380px] lg:w-[440px] shrink-0 snap-start flex flex-col rounded-3xl bg-[#0d121c]/90 border border-white/[0.09] hover:border-amber-500/40 backdrop-blur-md overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(0,0,0,0.6)] cursor-pointer"
               (click)="selectedProject = project"
             >
               <!-- CARD HEADER: Visual Thumbnail & Badges -->
@@ -187,6 +231,7 @@ import { PROJECTS, Project } from '../../data/portfolio-data';
 export class ProjectsComponent {
   selectedProject: Project | null = null;
   activeCategory: string = 'All';
+  activeProjectIndex: number = 0;
 
   @ViewChild('scrollContainerRef') scrollContainerRef!: ElementRef<HTMLDivElement>;
 
@@ -206,13 +251,33 @@ export class ProjectsComponent {
     return PROJECTS.filter((p) => p.category === this.activeCategory);
   }
 
+  onCategoryChange(cat: string) {
+    this.activeCategory = cat;
+    this.activeProjectIndex = 0;
+    if (this.scrollContainerRef?.nativeElement) {
+      this.scrollContainerRef.nativeElement.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+  }
+
+  onTrackScroll() {
+    if (!this.scrollContainerRef?.nativeElement) return;
+    const el = this.scrollContainerRef.nativeElement;
+    const firstCard = el.querySelector('.project-card') as HTMLElement;
+    const cardWidth = firstCard ? firstCard.offsetWidth + 16 : 380;
+    const index = Math.round(el.scrollLeft / cardWidth);
+    this.activeProjectIndex = Math.min(Math.max(0, index), this.filteredProjects.length - 1);
+  }
+
   handleScroll(direction: 'left' | 'right') {
     if (this.scrollContainerRef?.nativeElement) {
-      const scrollAmount = 450;
-      this.scrollContainerRef.nativeElement.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
+      const el = this.scrollContainerRef.nativeElement;
+      const firstCard = el.querySelector('.project-card') as HTMLElement;
+      const cardWidth = firstCard ? firstCard.offsetWidth + 16 : 400;
+      el.scrollBy({
+        left: direction === 'left' ? -cardWidth : cardWidth,
         behavior: 'smooth'
       });
+      setTimeout(() => this.onTrackScroll(), 350);
     }
   }
 }

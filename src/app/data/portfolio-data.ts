@@ -243,7 +243,7 @@ export const SKILLS_CATEGORIES = [
     ],
   },
   {
-    category: "Media, APIs & Tools",
+    category: "Media & Tools",
     icon: "Cpu",
     skills: [
       { name: "FFmpeg Pipeline", level: 88, detail: "Video transcoding, audio conversion, thumbnail extraction" },
