@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c2333"/>
+      <stop offset="50%" stop-color="#0d111a"/>
+      <stop offset="100%" stop-color="#05070a"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#f59e0b" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Obsidian Rounded Badge -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="#f59e0b" stroke-width="2.5" stroke-opacity="0.6"/>
+  
+  <!-- PB Bold Monogram -->
+  <text x="32" y="42" font-family="'JetBrains Mono', 'Segoe UI', monospace, sans-serif" font-size="26" font-weight="900" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="1" filter="url(#glow)">PB</text>
+  
+  <!-- Top-Right Glowing Status Beacon -->
+  <circle cx="50" cy="14" r="5" fill="#f59e0b" opacity="0.4"/>
+  <circle cx="50" cy="14" r="3.5" fill="#f59e0b"/>
+  <circle cx="50" cy="14" r="2" fill="#fef08a"/>
+</svg>
