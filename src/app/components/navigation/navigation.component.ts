@@ -33,6 +33,7 @@ const NAV_LINKS = [
           <a
             href="#hero"
             (click)="handleNavClick($event, '#hero')"
+            aria-label="Pushpraj Singh Bhati - Portfolio Home"
             class="group flex items-center gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg p-1"
           >
             <div class="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 via-zinc-900 to-black border border-amber-500/30 group-hover:border-amber-400 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all duration-300">

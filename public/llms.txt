@@ -1,0 +1,40 @@
+# Pushpraj Singh Bhati
+
+> Senior Full-Stack Engineer, Lead Architect & Project Manager specializing in Angular, TypeScript, C#, ASP.NET Core, SQL Server, and AWS Multi-Region distributed systems.
+
+Pushpraj Singh Bhati (also known as Pushpraj or Pushpraj Bhati) is a full-stack engineering lead with nearly 4 years of proven production experience. Promoted from Frontend Developer to Senior Programmer in 17 months, and subsequently to Project Manager & Lead Engineer heading a team of 4 engineers while remaining deeply hands-on.
+
+## Core Specializations
+
+- **Frontend Development**: Angular (v12, 13, 14, 15, 16, 17, 18, 19), TypeScript, RxJS, Tailwind CSS, SCSS, HTML5, Responsive UI Architecture, Web Performance (WebP, Brotli, Gzip, Core Web Vitals).
+- **Backend & APIs**: C#, .NET Core / .NET 6/7/8/9, ASP.NET Core Web API, Entity Framework Core, Dapper, RESTful API Design, Microservices, CQRS, JWT Authentication, Role-Based Access Control (RBAC).
+- **Database & Data**: SQL Server (MSSQL), T-SQL, Stored Procedures, Database Sharding, Dynamic Connection String Routing, Index Optimization, High-Throughput Batch Upserts.
+- **Cloud & DevOps**: AWS (EC2, S3, RDS, CloudFront), Multi-Region Architecture (UK, US, Asia), Bunny CDN, Docker, CI/CD (GitHub Actions), Zero-Downtime Deployments.
+- **Real-Time & Media Systems**: SignalR, WebSockets (18k+ concurrent connections), TUS Resumable Upload Protocol, FFmpeg automated server-side transcoding, EXIF metadata extraction.
+- **FinTech & Payments**: Multi-Gateway Monetization (Stripe API, Cashfree UPI/Cards, Apple In-App Purchases / StoreKit), webhook state machines.
+
+## Key Projects Architected & Delivered
+
+1. **Noosom Global Life-Story Platform**: Multi-region architecture on AWS across 6 regions and 3 distributed SQL Server databases with unified GlobalUserId identity, cutting cross-continental latency by 55%.
+2. **Resumable TUS & FFmpeg Media Pipeline**: Production-grade TUS resumable uploads with chunk recovery, mobile network fault-tolerance, and automated FFmpeg video transcoding to MP4/WebM.
+3. **Enterprise Media File Manager (DAM)**: In-house Digital Asset Management system handling 100k+ assets with EXIF/GPS parsing, saving ~₹1,00,000/month by replacing commercial Syncfusion licenses.
+4. **Centralized Enterprise Governance Console**: Mission-control Admin Portal with role-based access control, tenant impersonation, dynamic feature flags, and live telemetry.
+5. **Global Multi-Gateway Monetization Engine**: Unified billing core for Cashfree, Stripe, and Apple IAP with sub-second webhook processing and zero reconciliation loss.
+6. **Real-Time SignalR & WebSocket Layer**: Bi-directional real-time push architecture eliminating client polling with <15ms broadcast latency.
+7. **MPS V7 & Provider Rate Calculator**: Dynamic formula evaluation algorithms and high-density calculation grids in .NET Core.
+
+## Career Path
+
+- **Project Manager & Lead Engineer** — Noosom Private Limited (Apr 2024 – Present)
+- **Senior Programmer** — Noosom Private Limited (Nov 2022 – Mar 2024)
+- **Frontend Developer** — Noosom Private Limited (Jun 2021 – Oct 2022)
+
+## Contact & Links
+
+- **Website / Portfolio**: https://pushpraj2164.github.io/PSingh-Portfolio/
+- **Email**: pushprajbhati2164@gmail.com
+- **LinkedIn**: https://linkedin.com/in/pushprajsinghbhati
+- **GitHub**: https://github.com/pushprajsinghbhati
+- **Full LLM Context**: https://pushpraj2164.github.io/PSingh-Portfolio/llms-full.txt
+- **Resume**: https://pushpraj2164.github.io/PSingh-Portfolio/Pushpraj_Singh_Bhati_Resume.pdf
+

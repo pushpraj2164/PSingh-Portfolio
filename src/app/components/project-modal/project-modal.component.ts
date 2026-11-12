@@ -41,11 +41,18 @@ import { Project } from '../../data/portfolio-data';
           <div class="overflow-y-auto p-6 sm:p-8 space-y-8">
             <!-- Hero Image -->
             <div class="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/[0.1] bg-black">
-              <img
-                [src]="project.image"
-                [alt]="project.title"
-                class="w-full h-full object-cover"
-              />
+              <picture class="w-full h-full block">
+                <source [srcset]="project.image" type="image/webp" />
+                <img
+                  [src]="project.image"
+                  [alt]="project.title"
+                  loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="450"
+                  class="w-full h-full object-cover"
+                />
+              </picture>
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
               <div class="absolute bottom-4 left-4 right-4">
                 <h3 class="text-2xl sm:text-3xl font-extrabold text-white">

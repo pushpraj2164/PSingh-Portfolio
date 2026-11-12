@@ -120,12 +120,18 @@ import { PROJECTS, Project } from '../../data/portfolio-data';
             >
               <!-- CARD HEADER: Visual Thumbnail & Badges -->
               <div class="card-header relative aspect-[16/10] w-full overflow-hidden bg-black/60">
-                <img
-                  [src]="project.image"
-                  [alt]="project.title"
-                  class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-95 group-hover:brightness-105"
-                  loading="lazy"
-                />
+                <picture class="w-full h-full block">
+                  <source [srcset]="project.image" type="image/webp" />
+                  <img
+                    [src]="project.image"
+                    [alt]="project.title"
+                    loading="lazy"
+                    decoding="async"
+                    width="440"
+                    height="275"
+                    class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-95 group-hover:brightness-105"
+                  />
+                </picture>
 
                 <!-- Subtle dark gradient overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0d121c] via-[#0d121c]/30 to-transparent"></div>

@@ -30,14 +30,16 @@ import { PERSONAL_INFO } from '../../data/portfolio-data';
               </span>
             </div>
 
-            <!-- Role Sub-label -->
+            <!-- Role Sub-label with Primary Entity Identifier -->
             <div class="flex items-center gap-2 text-xs md:text-sm font-mono tracking-widest uppercase text-slate-400">
-              <span class="text-amber-500 font-bold">//</span>
-              <span>Senior Software Developer &amp; Lead Architect</span>
+              <span class="text-amber-400 font-bold">Pushpraj Singh Bhati</span>
+              <span class="text-amber-500/70 font-bold">//</span>
+              <span>Senior Developer &amp; Lead Architect</span>
             </div>
 
             <!-- Main Headline -->
             <h1 class="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
+              <span class="sr-only">Pushpraj Singh Bhati — Senior Full-Stack Developer &amp; Angular Lead Architect: </span>
               Turning Ideas <br />
               Into Scalable <br />
               <span class="text-gradient-amber">Solutions.</span>
@@ -118,11 +120,19 @@ import { PERSONAL_INFO } from '../../data/portfolio-data';
             <div class="relative w-full max-w-[420px] rounded-3xl p-3 bg-gradient-to-b from-white/[0.12] via-white/[0.04] to-transparent border border-white/[0.12] shadow-[0_25px_60px_rgba(0,0,0,0.7)] backdrop-blur-md">
               <!-- Image Frame -->
               <div class="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-[#0d121c] border border-white/[0.08]">
-                <img
-                  [src]="personalInfo.profileImage"
-                  [alt]="personalInfo.name"
-                  class="w-full h-full object-cover object-top filter brightness-95 contrast-105 hover:scale-105 transition-transform duration-700 ease-out"
-                />
+                <picture class="w-full h-full block">
+                  <source [srcset]="personalInfo.profileImage" type="image/webp" />
+                  <img
+                    [src]="personalInfo.profileImage"
+                    [alt]="personalInfo.name"
+                    width="420"
+                    height="525"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                    class="w-full h-full object-cover object-top filter brightness-95 contrast-105 hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                </picture>
 
                 <!-- Subtle vignette gradient over image -->
                 <div class="absolute inset-0 bg-gradient-to-t from-[#080a0f] via-transparent to-transparent opacity-80"></div>

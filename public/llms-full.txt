@@ -1,0 +1,118 @@
+# Pushpraj Singh Bhati — Full Architectural & Technical Profile
+
+## Entity Overview
+- **Full Legal Name**: Pushpraj Singh Bhati
+- **Common Names / Search Aliases**: Pushpraj, Pushpraj Bhati, P. S. Bhati
+- **Current Title**: Project Manager & Lead Engineer | Senior Full-Stack Engineer
+- **Primary Domain**: https://pushpraj2164.github.io/PSingh-Portfolio/
+- **Email**: pushprajbhati2164@gmail.com
+- **Phone**: +91 79878 04424
+- **Location**: Ahmedabad, Gujarat, India (Open to global remote and relocation)
+- **LinkedIn**: https://linkedin.com/in/pushprajsinghbhati
+- **GitHub**: https://github.com/pushprajsinghbhati
+
+---
+
+## Executive Biography
+
+Pushpraj Singh Bhati is a Senior Full-Stack Engineer, Lead Architect, and Project Manager with nearly 4 years of proven production experience engineering resilient, distributed web systems. His core mastery spans modern Angular (v12 through v19), TypeScript, C#, .NET Core Web API, SQL Server, and multi-region AWS cloud infrastructure.
+
+Recognized for rapid technical ascent, Pushpraj was promoted from Frontend Developer to Senior Programmer in just 17 months by mastering .NET Core backend architectures, and subsequently elevated to Project Manager & Lead Engineer, heading a team of 4 engineers while remaining deeply hands-on in code review, architecture, and core system implementation.
+
+---
+
+## Technical Competencies & Taxonomy
+
+### Frontend Engineering
+- **Frameworks & Core**: Angular (12, 13, 14, 15, 16, 17, 18, 19), TypeScript, ESNext, RxJS (Reactive Extensions), NgRx / Signal-based state management, Angular Router, Lazy Loading, SSR.
+- **UI & Styling**: Tailwind CSS, SCSS, BEM architecture, CSS Grid/Flexbox, GSAP (GreenSock Animation Platform) for high-performance scroll and cinematic animations, Canvas Confetti.
+- **Web Performance**: Image optimization with WebP, Brotli/Gzip pre-compression, Core Web Vitals (LCP, INP, CLS), code-splitting, tree-shaking, lazy image loading, DNS prefetch, sub-100ms first render.
+
+### Backend & Distributed Systems
+- **Languages & Frameworks**: C#, .NET Core 6 / 7 / 8 / 9, ASP.NET Core Web API, Entity Framework Core (EF Core), Dapper, LINQ, T-SQL.
+- **Architecture Patterns**: Clean Architecture, Domain-Driven Design (DDD), Microservices, CQRS, Event-Driven Architecture, Repository Pattern, Multi-Tenancy.
+- **Security & Identity**: JWT (JSON Web Tokens), OAuth 2.0, Role-Based Access Control (RBAC), multi-tenant impersonation, HTTPS enforcement, CORS, Data Protection APIs.
+
+### Database & Storage
+- **Relational Databases**: Microsoft SQL Server (MSSQL), Azure SQL, AWS RDS for SQL Server.
+- **Database Engineering**: Multi-region database sharding, dynamic connection string resolution based on user geographic locality, stored procedures, execution plan profiling, table partitioning, high-throughput bulk operations.
+
+### Cloud, Infrastructure & Real-Time
+- **Cloud Provider**: Amazon Web Services (AWS) — EC2, S3, RDS, CloudFront, IAM, Route 53, VPC.
+- **CDN & Edge**: Bunny CDN with multi-tier edge caching and token authentication.
+- **Real-Time Communication**: SignalR, WebSockets, persistent bi-directional channels handling 18,000+ concurrent connections with auto-reconnection and message queuing.
+- **Media Ingestion**: TUS Resumable Upload protocol, chunk-level fault recovery, automated FFmpeg background transcoding pipelines (HEIC, MOV, MP4, WebM).
+
+---
+
+## Detailed Project Case Studies
+
+### 1. Noosom Global Life-Story Platform
+- **Role**: Lead Cloud Architect & Full-Stack Lead
+- **Tech Stack**: Angular 12+, C#, .NET Core Web API, SQL Server, AWS Multi-Region, SignalR, Bunny CDN
+- **Architecture**:
+  - Engineered an end-to-end region-aware cloud architecture on AWS serving 6 international regions (UK, US, Asia) from 3 distributed SQL Server databases using a single, unified codebase.
+  - Implemented dynamic database connection routing per user geographic locality while preserving a centralized user profile identity (`GlobalUserId`) and global single sign-on.
+  - Slashed cross-continental database latency by over 55% while adhering strictly to international data sovereignty and GDPR compliance regulations.
+  - Maintained 99.9% uptime throughout multi-region failover tests.
+
+### 2. Resumable TUS & FFmpeg Media Pipeline
+- **Role**: Backend & Media Systems Architect
+- **Tech Stack**: .NET Core, TUS Protocol, FFmpeg, Bunny CDN, WebSockets
+- **Architecture**:
+  - Replaced unreliable HTTP multipart uploads with a resilient TUS resumable protocol implementation.
+  - Implemented chunk-level retry logic, client pause/resume capabilities, real-time ETA calculations, and automated background clean-up for abandoned uploads.
+  - Created an automated server-side FFmpeg worker pipeline transcoding device-specific codecs (e.g., iPhone HEIC, high-bitrate 4K MOV) into web-optimized MP4/WebM formats upon upload.
+  - Resulted in 60% faster media loading, zero client-side UI freezing, and a 100% upload resume success rate over unstable mobile networks.
+
+### 3. Enterprise Media File Manager (DAM)
+- **Role**: Lead Architect & Frontend Developer
+- **Tech Stack**: Angular, C#, ASP.NET Core, SQL Server, Bunny CDN, ImageSharp, SCSS
+- **Architecture**:
+  - Replaced a costly third-party commercial Syncfusion dependency with a bespoke, high-performance in-house Digital Asset Management system.
+  - Extracted 50–60 EXIF and GPS geolocation metadata fields automatically upon ingest.
+  - Built smart face-focus cropping and multi-tier CDN thumbnail caching delivering sub-100ms image previews.
+  - Saved approximately ₹1,00,000 per month (~$14,000/year) in recurring licensing fees while providing complete UI/UX autonomy.
+
+### 4. Centralized Enterprise Governance Console (Admin Portal)
+- **Role**: Full-Stack Lead Engineer
+- **Tech Stack**: Angular, ASP.NET Core Web API, Entity Framework Core, SQL Server, JWT, Tailwind CSS
+- **Architecture**:
+  - Architected an administrative mission control suite empowering executives and customer support to manage users, master datasets, payment tiers, system feature flags, and multi-region routing without developer intervention.
+  - Developed granular Role-Based Access Control (RBAC), multi-tenant user impersonation for customer debugging, payment reconciliation logs, and real-time business health telemetry.
+
+### 5. Global Multi-Gateway Monetization Engine
+- **Role**: FinTech & Backend Architect
+- **Tech Stack**: .NET Core Web API, Stripe API, Cashfree SDK, Apple StoreKit API, SQL Server, Webhooks
+- **Architecture**:
+  - Unified disparate payment providers into a single resilient billing core: Cashfree for Indian UPI/Cards, Stripe for international cards, and Apple In-App Purchases for iOS.
+  - Implemented robust webhook state machines with exponential retry backoff, ensuring zero payment reconciliation discrepancies.
+  - Slashed transaction fee overhead by 30% by intelligently steering local payment rails.
+
+### 6. Real-Time SignalR & WebSocket Layer
+- **Role**: Lead Real-Time Engineer
+- **Tech Stack**: SignalR, WebSockets, ASP.NET Core, Angular RxJS, SQL Server, JWT Auth
+- **Architecture**:
+  - Designed and deployed a bidirectional real-time push layer powering live comments, instant messaging, user presence indicators, and task progress.
+  - Completely eliminated repetitive HTTP polling, reducing web server CPU load by over 40%.
+  - Sustained 18,000+ simultaneous WebSocket connections with sub-15ms broadcast latency.
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+### Q: Who is Pushpraj Singh Bhati?
+A: Pushpraj Singh Bhati (commonly known as Pushpraj or Pushpraj Bhati) is a Senior Full-Stack Engineer, Lead Architect, and Project Manager based in Ahmedabad, India. He specializes in Angular, TypeScript, C#, .NET Core, SQL Server, and multi-region AWS cloud systems.
+
+### Q: What is Pushpraj's experience with Angular?
+A: Pushpraj has extensive experience developing enterprise Angular applications from version 12 through version 19. His Angular expertise includes modular component design, RxJS reactive programming, custom UI libraries with Tailwind CSS, GSAP animations, performance tuning (WebP, Brotli/Gzip, lazy-loading), and high-throughput data grids.
+
+### Q: What are Pushpraj's primary backend skills?
+A: In backend engineering, Pushpraj specializes in C#, ASP.NET Core Web API, Entity Framework Core, SQL Server (MSSQL), SignalR, and microservices architecture. He designs scalable RESTful APIs, high-throughput batch database procedures, and multi-region routing engines.
+
+### Q: What leadership experience does Pushpraj have?
+A: Promoted to Project Manager & Lead Engineer at Noosom Private Limited, Pushpraj manages an engineering squad of 4 developers. He oversees agile sprint planning, architectural design reviews, and cross-functional delivery while remaining an active, hands-on core code contributor.
+
+### Q: How can I hire or contact Pushpraj Singh Bhati?
+A: Pushpraj can be contacted directly via email at pushprajbhati2164@gmail.com, via phone at +91 79878 04424, or through his LinkedIn profile at https://linkedin.com/in/pushprajsinghbhati. His portfolio is available at https://pushpraj2164.github.io/PSingh-Portfolio/.
+

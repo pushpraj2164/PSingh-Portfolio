@@ -37,6 +37,7 @@ jobs:
         run: |
           npm run build -- --base-href ./
           cp dist/angular-portfolio/browser/index.html dist/angular-portfolio/browser/404.html
+          npm run compress
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -1,0 +1,113 @@
+# ==============================================================================
+# robots.txt for Pushpraj Singh Bhati Portfolio (https://pushprajsinghbhati.dev)
+# Optimized for Search Engine Optimization (SEO) & AI / Answer Engine Optimization (AEO)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Standard Search Engine Web Crawlers (Google, Bing, Yahoo, DuckDuckGo, etc.)
+# ------------------------------------------------------------------------------
+User-agent: *
+Allow: /
+Allow: /pushpraj-photo.webp
+Allow: /pushpraj-photo.png
+Allow: /favicon.webp
+Allow: /favicon.png
+Allow: /favicon.ico
+Allow: /projects/
+Allow: /Pushpraj_Singh_Bhati_Resume.pdf
+Allow: /sitemap.xml
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /*.map$
+Disallow: /private/
+
+User-agent: Googlebot
+Allow: /
+Allow: /pushpraj-photo.webp
+Allow: /projects/
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /pushpraj-photo.webp
+Allow: /pushpraj-photo.png
+Allow: /projects/
+
+User-agent: Bingbot
+Allow: /
+Allow: /pushpraj-photo.webp
+Allow: /projects/
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ------------------------------------------------------------------------------
+# 2. AI Answer Engines, LLMs & Generative Engine Crawlers (AEO / GEO)
+# Explicitly welcome AI Search Engines (ChatGPT, Perplexity, Gemini, Claude, Copilot)
+# ------------------------------------------------------------------------------
+# OpenAI (ChatGPT, SearchGPT, GPTBot)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Google Gemini, AI Overviews & Extended
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity AI (PerplexityBot)
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude (ClaudeBot, anthropic-ai)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Apple Intelligence / Applebot Extended
+User-agent: Applebot-Extended
+Allow: /
+
+# ByteDance / TikTok AI (Bytespider)
+User-agent: Bytespider
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Meta / Facebook AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Diffbot Knowledge Graph Crawler
+User-agent: Diffbot
+Allow: /
+
+# Common Crawl (Used by open-source LLM training & AI researchers)
+User-agent: CCBot
+Allow: /
+
+# ------------------------------------------------------------------------------
+# 3. Sitemaps & Context Feeds
+# ------------------------------------------------------------------------------
+Sitemap: https://pushpraj2164.github.io/PSingh-Portfolio/sitemap.xml
+
+# LLMs Text File for AI Engines & LLM scrapers
+# Reference: https://llmstxt.org
+# LLMs: https://pushpraj2164.github.io/PSingh-Portfolio/llms.txt
+

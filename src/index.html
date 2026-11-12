@@ -1,39 +1,399 @@
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="dark scroll-smooth" prefix="og: https://ogp.me/ns# profile: https://ogp.me/ns/profile#">
 <head>
   <meta charset="utf-8">
-  <title>Pushpraj Singh Bhati | Senior Full-Stack Developer &amp; Lead Engineer</title>
+  <title>Pushpraj Singh Bhati | Senior Full-Stack Developer &amp; Angular Lead Architect</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio of Pushpraj Singh Bhati — Senior Full-Stack Engineer &amp; Project Manager specializing in Angular, C#, .NET Core, SQL Server, AWS Multi-Region Architecture, Bunny CDN, FFmpeg &amp; Distributed Real-Time Systems.">
-  <meta name="keywords" content="Pushpraj Singh Bhati, Senior Full-Stack Developer, Lead Engineer, Project Manager, .NET Core, C#, Angular, SQL Server, AWS Multi-Region, SignalR, Bunny CDN, TUS Resumable Uploads, FFmpeg, Portfolio">
+
+  <!-- Primary Search Engine Optimization (SEO) Meta Tags -->
+  <meta name="title" content="Pushpraj Singh Bhati | Senior Full-Stack Developer &amp; Angular Lead Architect">
+  <meta name="description" content="Official portfolio of Pushpraj Singh Bhati (Pushpraj) — Senior Full-Stack Engineer, Lead Architect &amp; Project Manager specializing in Angular, TypeScript, C#, ASP.NET Core, SQL Server, AWS Multi-Region architecture, SignalR &amp; Bunny CDN.">
+  <meta name="keywords" content="Pushpraj, Pushpraj Singh Bhati, Pushpraj Bhati, Pushpraj Angular, Pushpraj Angular Developer, Pushpraj Portfolio, Pushpraj Full Stack, Senior Full-Stack Developer Pushpraj, Angular Lead Architect, .NET Core Lead Engineer, AWS Multi-Region Pushpraj, SignalR WebSockets, Bunny CDN, TUS Resumable Upload, Noosom Architect, Ahmedabad Developer">
   <meta name="author" content="Pushpraj Singh Bhati">
+  <meta name="creator" content="Pushpraj Singh Bhati">
+  <meta name="publisher" content="Pushpraj Singh Bhati">
   <meta name="theme-color" content="#080a0f">
+  <meta name="color-scheme" content="dark">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pushprajsinghbhati.dev">
-  <meta property="og:title" content="Pushpraj Singh Bhati | Senior Full-Stack Developer &amp; Lead Engineer">
-  <meta property="og:description" content="Turning complex business requirements into high-performance, region-aware cloud systems, real-time architectures, and scalable web applications.">
-  <meta property="og:image" content="pushpraj-photo.png">
+  <!-- Canonical URL (Points to the active live production URL) -->
+  <link rel="canonical" href="https://pushpraj2164.github.io/PSingh-Portfolio/">
 
-  <!-- Twitter -->
+  <!-- Search Engine Crawling Directives -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- Geographic & Local Entity Meta Tags -->
+  <meta name="geo.region" content="IN-GJ">
+  <meta name="geo.placename" content="Ahmedabad, Gujarat, India">
+  <meta name="geo.position" content="23.0225;72.5714">
+  <meta name="ICBM" content="23.0225, 72.5714">
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp (Rich Social Sharing) -->
+  <meta property="og:site_name" content="Pushpraj Singh Bhati Portfolio">
+  <meta property="og:title" content="Pushpraj Singh Bhati | Senior Full-Stack Developer &amp; Lead Architect">
+  <meta property="og:description" content="Portfolio of Pushpraj Singh Bhati — Senior Full-Stack Engineer &amp; Project Manager specializing in Angular, TypeScript, C#, .NET Core, SQL Server, AWS Multi-Region architecture, Bunny CDN &amp; Real-Time Systems.">
+  <meta property="og:type" content="profile">
+  <meta property="profile:first_name" content="Pushpraj">
+  <meta property="profile:last_name" content="Singh Bhati">
+  <meta property="profile:username" content="pushprajsinghbhati">
+  <meta property="profile:gender" content="male">
+  <meta property="og:url" content="https://pushpraj2164.github.io/PSingh-Portfolio/">
+  <meta property="og:image" content="https://pushpraj2164.github.io/PSingh-Portfolio/pushpraj-photo.webp">
+  <meta property="og:image:secure_url" content="https://pushpraj2164.github.io/PSingh-Portfolio/pushpraj-photo.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1146">
+  <meta property="og:image:height" content="1372">
+  <meta property="og:image:alt" content="Pushpraj Singh Bhati — Senior Full-Stack Developer &amp; Lead Architect">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter / X Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pushpraj Singh Bhati | Senior Full-Stack Developer">
-  <meta name="twitter:description" content="Specialized in .NET Core, Angular, SQL Server &amp; AWS Multi-Region Systems.">
-  <meta name="twitter:image" content="pushpraj-photo.png">
+  <meta name="twitter:site" content="@pushprajbhati">
+  <meta name="twitter:creator" content="@pushprajbhati">
+  <meta name="twitter:title" content="Pushpraj Singh Bhati | Senior Full-Stack Developer &amp; Lead Architect">
+  <meta name="twitter:description" content="Senior Full-Stack Developer specializing in Angular, TypeScript, .NET Core, SQL Server &amp; AWS Multi-Region Systems.">
+  <meta name="twitter:image" content="https://pushpraj2164.github.io/PSingh-Portfolio/pushpraj-photo.webp">
+  <meta name="twitter:image:alt" content="Pushpraj Singh Bhati Portfolio">
 
-  <!-- High-Definition Custom Profile Photo Favicon -->
-  <link rel="icon" type="image/png" sizes="128x128" href="favicon.png">
+  <!-- High-Definition Favicons & App Icons (100% WebP & Modern Formats) -->
+  <link rel="icon" type="image/webp" sizes="128x128" href="favicon.webp">
+  <link rel="icon" type="image/svg+xml" href="favicon-monogram.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.webp">
 
-  <!-- Modern Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <!-- Critical Asset Preloading for Core Web Vitals (Instant LCP) -->
+  <link rel="preload" as="image" href="pushpraj-photo.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- AI Engine & Answer Engine Optimization (AEO / GEO) LLM Context Links -->
+  <link rel="alternate" type="text/plain" href="llms.txt" title="LLM Context (llms.txt)">
+  <link rel="alternate" type="text/plain" href="llms-full.txt" title="Full LLM Context (llms-full.txt)">
+
+  <!-- ======================================================================= -->
+  <!-- Schema.org JSON-LD Structured Data: Person, WebSite, ProfilePage, ItemList & FAQPage -->
+  <!-- ======================================================================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#person",
+        "name": "Pushpraj Singh Bhati",
+        "givenName": "Pushpraj",
+        "familyName": "Singh Bhati",
+        "alternateName": ["Pushpraj", "Pushpraj Bhati", "P. S. Bhati"],
+        "jobTitle": "Project Manager & Lead Engineer",
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "Senior Full-Stack Developer",
+            "skills": "Angular, TypeScript, C#, .NET Core, SQL Server, AWS Multi-Region, SignalR, Bunny CDN, TUS Protocol, FFmpeg"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Lead Cloud Architect & Project Manager",
+            "skills": "Distributed Systems, Multi-Region Architecture, Agile Sprint Leadership, Team Mentorship"
+          }
+        ],
+        "description": "Senior Full-Stack Engineer and Lead Architect with nearly 4 years building resilient, high-throughput web applications in Angular, TypeScript, C#, .NET Core, SQL Server and AWS Multi-Region architecture. Promoted from Frontend Developer to Senior Programmer in 17 months, then to Project Manager & Lead Engineer heading a squad of 4 engineers.",
+        "url": "https://pushpraj2164.github.io/PSingh-Portfolio/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://pushpraj2164.github.io/PSingh-Portfolio/pushpraj-photo.webp",
+          "caption": "Pushpraj Singh Bhati — Senior Full-Stack Developer & Lead Engineer"
+        },
+        "email": "mailto:pushprajbhati2164@gmail.com",
+        "telephone": "+91-79878-04424",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "addressCountry": "India"
+        },
+        "sameAs": [
+          "https://linkedin.com/in/pushprajsinghbhati",
+          "https://github.com/pushprajsinghbhati",
+          "https://github.com/pushpraj2164"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Noosom Private Limited",
+          "url": "https://noosom.com"
+        },
+        "knowsAbout": [
+          "Angular",
+          "Angular 12+",
+          "Angular 19",
+          "TypeScript",
+          "JavaScript",
+          "C#",
+          ".NET Core",
+          "ASP.NET Core Web API",
+          "Entity Framework Core",
+          "SQL Server",
+          "MSSQL",
+          "Amazon Web Services (AWS)",
+          "AWS Multi-Region Architecture",
+          "SignalR",
+          "WebSockets",
+          "Bunny CDN",
+          "TUS Resumable Uploads",
+          "FFmpeg Video Transcoding",
+          "Tailwind CSS",
+          "RxJS",
+          "GSAP Animations",
+          "Microservices",
+          "RESTful APIs",
+          "CQRS",
+          "Full-Stack Web Development",
+          "Project Management"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#website",
+        "url": "https://pushpraj2164.github.io/PSingh-Portfolio/",
+        "name": "Pushpraj Singh Bhati Portfolio",
+        "alternateName": ["Pushpraj Portfolio", "Pushpraj Angular Developer Portfolio", "Pushpraj Singh Bhati"],
+        "description": "Official portfolio of Pushpraj Singh Bhati — Senior Full-Stack Developer, Lead Architect & Project Manager.",
+        "publisher": {
+          "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#person"
+        },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#profilepage",
+        "url": "https://pushpraj2164.github.io/PSingh-Portfolio/",
+        "name": "Pushpraj Singh Bhati — Senior Full-Stack Developer & Lead Architect",
+        "isPartOf": {
+          "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#website"
+        },
+        "about": {
+          "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#person"
+        },
+        "mainEntity": {
+          "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#person"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://pushpraj2164.github.io/PSingh-Portfolio/pushpraj-photo.webp"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#projects-list",
+        "name": "Production Projects Architected by Pushpraj Singh Bhati",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Noosom Global Life-Story Platform",
+              "description": "AWS Multi-Region distributed web platform serving 6 international regions from 3 distributed SQL Server databases with unified GlobalUserId identity.",
+              "applicationCategory": "WebApplication",
+              "operatingSystem": "Web",
+              "url": "https://noosom.com",
+              "author": { "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#person" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Resumable TUS & FFmpeg Media Pipeline",
+              "description": "Fault-tolerant TUS resumable media upload protocol with chunk recovery, client pause/resume, and automated server-side FFmpeg transcoding to MP4/WebM.",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "Web",
+              "url": "https://noosom.com",
+              "author": { "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#person" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "High-Throughput Media File Manager (DAM)",
+              "description": "Enterprise Digital Asset Management system extracting 50-60 EXIF/GPS fields, smart face cropping, and Bunny CDN caching, saving ₹1 Lakh/month in licensing.",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web",
+              "url": "https://noosom.com",
+              "author": { "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#person" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Centralized Enterprise Governance Console",
+              "description": "Zero-dependency operational management suite in Angular and ASP.NET Core with role-based access control (RBAC) and dynamic multi-region routing.",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web",
+              "url": "https://noosom.com",
+              "author": { "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#person" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Global Multi-Gateway Monetization Engine",
+              "description": "Hybrid Stripe, Cashfree (UPI/Cards), and Apple In-App Purchases payment engine with fault-tolerant webhook state machines.",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Web",
+              "url": "https://noosom.com",
+              "author": { "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#person" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Real-Time SignalR & WebSocket Layer",
+              "description": "Bidirectional low-latency push architecture handling 18k+ persistent WebSocket connections with sub-15ms broadcast latency.",
+              "applicationCategory": "CommunicationApplication",
+              "operatingSystem": "Web",
+              "url": "https://noosom.com",
+              "author": { "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#person" }
+            }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://pushpraj2164.github.io/PSingh-Portfolio/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Who is Pushpraj Singh Bhati?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pushpraj Singh Bhati (commonly known as Pushpraj or Pushpraj Bhati) is a Senior Full-Stack Engineer, Lead Architect, and Project Manager based in Ahmedabad, India. With nearly 4 years of hands-on experience, he specializes in Angular (v12-v19), TypeScript, C#, .NET Core Web API, SQL Server, and AWS Multi-Region cloud systems. He was promoted from Frontend Developer to Senior Programmer in 17 months, and then to Project Manager & Lead Engineer, heading a team of 4 engineers while remaining deeply hands-on."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Pushpraj's experience with Angular?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pushpraj has extensive experience developing enterprise Angular applications across versions 12 through 19. His Angular expertise includes modular component design, RxJS reactive programming, custom UI component libraries with Tailwind CSS, GSAP cinematic animations, Core Web Vitals optimization (WebP, Brotli, Gzip, lazy loading), and sub-100ms client rendering."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What systems has Pushpraj architected on AWS and .NET Core?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pushpraj architected the multi-region distributed cloud infrastructure for Noosom across 6 global regions and 3 SQL Server databases on AWS, reducing cross-continental latency by over 55%. He also engineered a fault-tolerant TUS resumable upload and automated FFmpeg video transcoding pipeline, built an enterprise Media Asset Manager saving ₹1 Lakh per month, and designed a real-time SignalR WebSocket layer sustaining 18,000+ simultaneous connections."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are Pushpraj's core backend and database technologies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pushpraj specializes in C#, ASP.NET Core Web API, Entity Framework Core, Dapper, SQL Server (MSSQL), T-SQL stored procedures, database sharding, dynamic connection string routing, JWT authentication, role-based access control, and microservices architecture."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I contact or hire Pushpraj Singh Bhati?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pushpraj Singh Bhati can be reached directly via email at pushprajbhati2164@gmail.com, via phone at +91 79878 04424, or via LinkedIn at https://linkedin.com/in/pushprajsinghbhati. His source code and contributions are on GitHub at https://github.com/pushprajsinghbhati, and his complete portfolio is available at https://pushpraj2164.github.io/PSingh-Portfolio/."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="portfolio-body">
-  <app-root></app-root>
+  <app-root>
+    <!-- Semantic Static Crawlable Fallback for Search Engines (Googlebot, Bingbot) and AI Answer Engines (ChatGPT, Perplexity, Gemini, Claude) -->
+    <!-- When Angular bootstraps, this fallback content is instantly replaced by the interactive Angular application -->
+    <noscript>
+      <div style="background-color: #080a0f; color: #f8fafc; font-family: sans-serif; padding: 2rem; max-width: 900px; margin: 0 auto; line-height: 1.6;">
+        <h1>Pushpraj Singh Bhati | Senior Full-Stack Developer &amp; Angular Lead Architect</h1>
+        <p>Turning complex business requirements into high-performance, region-aware cloud systems, real-time architectures, and scalable web applications in Angular, TypeScript, C#, .NET Core, SQL Server and AWS.</p>
+        <p>Contact: <a href="mailto:pushprajbhati2164@gmail.com" style="color: #f59e0b;">pushprajbhati2164@gmail.com</a> | <a href="https://linkedin.com/in/pushprajsinghbhati" style="color: #f59e0b;">LinkedIn</a> | <a href="https://github.com/pushprajsinghbhati" style="color: #f59e0b;">GitHub</a></p>
+      </div>
+    </noscript>
+
+    <div class="sr-only" aria-hidden="true" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">
+      <header>
+        <h1>Pushpraj Singh Bhati — Senior Full-Stack Developer, Lead Architect &amp; Project Manager</h1>
+        <p>Pushpraj Singh Bhati (also known as Pushpraj or Pushpraj Bhati) is a Senior Full-Stack Engineer and Lead Architect with nearly 4 years building resilient, high-throughput web applications in Angular, TypeScript, C#, .NET Core and SQL Server.</p>
+        <p>Promoted from Frontend Developer to Senior Programmer in 17 months, then to Project Manager &amp; Lead Engineer heading an engineering team of 4 while remaining deeply hands-on.</p>
+      </header>
+
+      <section>
+        <h2>Key Quantitative Achievements</h2>
+        <ul>
+          <li><strong>55% Latency Reduction:</strong> Architected AWS multi-region cloud infrastructure serving 6 international regions from 3 distributed SQL Server databases with unified GlobalUserId identity.</li>
+          <li><strong>₹1,00,000 / Month Saved:</strong> Built an in-house Enterprise Media Asset Manager handling 100k+ assets, replacing costly third-party Syncfusion commercial licenses.</li>
+          <li><strong>18,000+ Concurrent WebSockets:</strong> Deployed a bidirectional SignalR real-time layer with sub-15ms broadcast latency.</li>
+          <li><strong>100% Upload Resume Rate:</strong> Built a production-grade TUS protocol resumable upload engine paired with automated server-side FFmpeg transcoding.</li>
+          <li><strong>25+ Production Projects Delivered</strong> across full-stack web, fintech monetization, and cloud systems.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Core Technical Skills</h2>
+        <p><strong>Frontend:</strong> Angular (v12, v13, v14, v15, v16, v17, v18, v19), TypeScript, RxJS, Tailwind CSS, SCSS, GSAP Animations, Web Performance, WebP, Brotli, Gzip, Core Web Vitals.</p>
+        <p><strong>Backend:</strong> C#, .NET Core, .NET 6/7/8/9, ASP.NET Core Web API, Entity Framework Core, Dapper, SQL Server, T-SQL, Microservices, CQRS, RESTful APIs, JWT Auth, RBAC.</p>
+        <p><strong>Cloud &amp; DevOps:</strong> AWS (EC2, S3, RDS, CloudFront), Bunny CDN, Docker, CI/CD, GitHub Actions, SignalR, WebSockets, TUS Protocol, FFmpeg.</p>
+        <p><strong>Payments &amp; FinTech:</strong> Multi-Gateway Monetization (Stripe, Cashfree UPI/Cards, Apple In-App Purchases StoreKit), Webhooks.</p>
+      </section>
+
+      <section>
+        <h2>Major Projects Architected &amp; Built</h2>
+        <article>
+          <h3>Noosom Global Life-Story Platform</h3>
+          <p>Region-aware distributed cloud platform in Angular, C#, .NET Core Web API, SQL Server and AWS. Unified GlobalUserId identity across 6 regions.</p>
+        </article>
+        <article>
+          <h3>Resumable TUS &amp; FFmpeg Media Pipeline</h3>
+          <p>Production-grade TUS protocol resumable uploads with chunk recovery, mobile fault-tolerance, and automated server-side FFmpeg transcoding to MP4/WebM.</p>
+        </article>
+        <article>
+          <h3>Enterprise Media File Manager (DAM)</h3>
+          <p>High-throughput digital asset management in Angular and ASP.NET Core with 50-60 EXIF/GPS fields, facial focus cropping, and multi-tier Bunny CDN caching.</p>
+        </article>
+        <article>
+          <h3>Centralized Enterprise Governance Console</h3>
+          <p>Zero-dependency mission-control Admin Portal in Angular, EF Core, and SQL Server with role-based access control (RBAC) and dynamic routing switches.</p>
+        </article>
+        <article>
+          <h3>Global Multi-Gateway Monetization Engine</h3>
+          <p>Unified billing core integrating Cashfree (India UPI/Cards), Stripe (International), and Apple In-App Purchases with sub-second webhook processing.</p>
+        </article>
+        <article>
+          <h3>Real-Time SignalR &amp; WebSocket Layer</h3>
+          <p>Low-latency bidirectional push layer eliminating polling across 18k+ simultaneous connections.</p>
+        </article>
+      </section>
+
+      <section>
+        <h2>Contact Information</h2>
+        <p>Email: pushprajbhati2164@gmail.com | Phone: +91 79878 04424 | Location: Ahmedabad, Gujarat, India</p>
+        <p>Portfolio: https://pushpraj2164.github.io/PSingh-Portfolio/ | LinkedIn: https://linkedin.com/in/pushprajsinghbhati | GitHub: https://github.com/pushprajsinghbhati</p>
+      </section>
+    </div>
+  </app-root>
 </body>
 </html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://pushpraj2164.github.io/PSingh-Portfolio/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://pushpraj2164.github.io/PSingh-Portfolio/pushpraj-photo.webp</image:loc>
+      <image:title>Pushpraj Singh Bhati — Senior Full-Stack Developer &amp; Lead Engineer</image:title>
+      <image:caption>Pushpraj Singh Bhati — Expert in Angular, .NET Core, AWS Multi-Region Architecture &amp; Scalable Web Applications</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pushpraj2164.github.io/PSingh-Portfolio/projects/noosom.webp</image:loc>
+      <image:title>Noosom Global Life-Story Platform</image:title>
+      <image:caption>AWS Multi-Region Distributed Architecture in Angular, .NET Core and SQL Server</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pushpraj2164.github.io/PSingh-Portfolio/projects/media-pipeline.webp</image:loc>
+      <image:title>Resumable TUS and FFmpeg Media Pipeline</image:title>
+      <image:caption>Fault-tolerant media upload and video transcoding engine with Bunny CDN</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pushpraj2164.github.io/PSingh-Portfolio/projects/admin-portal.webp</image:loc>
+      <image:title>Centralized Enterprise Governance Console</image:title>
+      <image:caption>Unified administrative suite in Angular and ASP.NET Core Web API</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pushpraj2164.github.io/PSingh-Portfolio/projects/payments-engine.webp</image:loc>
+      <image:title>Global Multi-Gateway Monetization Engine</image:title>
+      <image:caption>Hybrid Stripe, Cashfree and Apple In-App Purchases integration</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pushpraj2164.github.io/PSingh-Portfolio/projects/signalr-realtime.webp</image:loc>
+      <image:title>Real-Time SignalR and WebSocket Layer</image:title>
+      <image:caption>Low-latency bidirectional WebSocket push architecture serving 18k+ concurrent connections</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pushpraj2164.github.io/PSingh-Portfolio/projects/provider-calculator.webp</image:loc>
+      <image:title>MPS V7 and Provider Rate Calculator</image:title>
+      <image:caption>High-volume calculation and tariff analysis engine in .NET Core and SQL Server</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://pushpraj2164.github.io/PSingh-Portfolio/#about</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://pushpraj2164.github.io/PSingh-Portfolio/#skills</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://pushpraj2164.github.io/PSingh-Portfolio/#projects</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://pushpraj2164.github.io/PSingh-Portfolio/#experience</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pushpraj2164.github.io/PSingh-Portfolio/#contact</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

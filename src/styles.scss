@@ -479,3 +479,31 @@ body.portfolio-body {
   animation: bounceX 1.2s ease-in-out infinite;
 }
 
+/* ==========================================================================
+   Ultra-Smooth Performance & Lazy Rendering System
+   ========================================================================== */
+#skills,
+#experience,
+#services,
+#workflow,
+#why-me,
+#testimonials,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+/* GPU Hardware Acceleration for Buttery 60/120fps Scrolling */
+.project-card,
+.stat-card,
+.feature-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Smooth Image Decoding & Layout Shift Prevention */
+picture, img {
+  content-visibility: auto;
+}
+
