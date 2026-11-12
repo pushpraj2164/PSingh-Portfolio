@@ -39,7 +39,7 @@ import { GsapAnimationService } from './services/gsap-animation.service';
     FooterComponent,
   ],
   template: `
-    <div class="relative min-h-screen bg-[#080a0f] text-slate-100 selection:bg-amber-500/30 selection:text-white">
+    <div class="relative min-h-screen bg-[#080a0f] text-slate-100 selection:bg-amber-500/30 selection:text-white pb-20 md:pb-0">
       <!-- Interactive Custom Cursor -->
       <app-custom-cursor></app-custom-cursor>
 

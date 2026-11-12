@@ -8,29 +8,108 @@ import { PERSONAL_INFO } from '../../data/portfolio-data';
   standalone: true,
   imports: [CommonModule, AppIconComponent],
   template: `
+    <!-- ================================================================= -->
+    <!-- FLOATING MOBILE DOCK FOOTER (< md screens, always accessible)     -->
+    <!-- ================================================================= -->
+    <nav
+      class="fixed bottom-3 left-3 right-3 sm:left-6 sm:right-6 z-50 md:hidden bg-[#090d16]/92 backdrop-blur-2xl border border-white/[0.14] rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.85)] px-2 py-1.5 flex items-center justify-between"
+      aria-label="Floating Quick Portfolio Navigation"
+    >
+      <!-- Home -->
+      <a
+        href="#hero"
+        (click)="handleMobileNavClick($event, '#hero')"
+        class="flex flex-col items-center justify-center py-1 px-2 rounded-xl text-slate-400 hover:text-white active:scale-95 transition-all"
+        aria-label="Home"
+      >
+        <app-icon name="terminal" className="w-4 h-4 text-amber-400"></app-icon>
+        <span class="text-[9px] font-mono tracking-tight mt-0.5">Home</span>
+      </a>
+
+      <!-- Projects -->
+      <a
+        href="#projects"
+        (click)="handleMobileNavClick($event, '#projects')"
+        class="relative flex flex-col items-center justify-center py-1 px-2.5 rounded-xl text-slate-300 hover:text-white active:scale-95 transition-all"
+        aria-label="Projects"
+      >
+        <div class="relative">
+          <app-icon name="layers" className="w-4 h-4 text-amber-400"></app-icon>
+          <span class="absolute -top-1 -right-1.5 w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+        </div>
+        <span class="text-[9px] font-mono font-semibold tracking-tight text-white mt-0.5">Projects</span>
+      </a>
+
+      <!-- Skills -->
+      <a
+        href="#skills"
+        (click)="handleMobileNavClick($event, '#skills')"
+        class="flex flex-col items-center justify-center py-1 px-2 rounded-xl text-slate-400 hover:text-white active:scale-95 transition-all"
+        aria-label="Skills"
+      >
+        <app-icon name="cpu" className="w-4 h-4 text-cyan-400"></app-icon>
+        <span class="text-[9px] font-mono tracking-tight mt-0.5">Skills</span>
+      </a>
+
+      <!-- Experience -->
+      <a
+        href="#experience"
+        (click)="handleMobileNavClick($event, '#experience')"
+        class="flex flex-col items-center justify-center py-1 px-2 rounded-xl text-slate-400 hover:text-white active:scale-95 transition-all"
+        aria-label="Experience"
+      >
+        <app-icon name="briefcase" className="w-4 h-4 text-emerald-400"></app-icon>
+        <span class="text-[9px] font-mono tracking-tight mt-0.5">Exp</span>
+      </a>
+
+      <!-- Resume / CV -->
+      <a
+        [href]="personalInfo.resumePath"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-col items-center justify-center py-1 px-2 rounded-xl text-slate-400 hover:text-white active:scale-95 transition-all"
+        aria-label="Resume"
+      >
+        <app-icon name="file-down" className="w-4 h-4 text-amber-300"></app-icon>
+        <span class="text-[9px] font-mono tracking-tight mt-0.5">CV</span>
+      </a>
+
+      <!-- Contact / Hire Button -->
+      <a
+        href="#contact"
+        (click)="handleMobileNavClick($event, '#contact')"
+        class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-black font-bold text-[11px] shadow-[0_0_15px_rgba(245,158,11,0.4)] active:scale-95 transition-all"
+        aria-label="Contact / Hire"
+      >
+        <app-icon name="mail" className="w-3.5 h-3.5"></app-icon>
+        <span>Let's Talk</span>
+      </a>
+    </nav>
+
+    <!-- ================================================================= -->
+    <!-- MAIN IN-PAGE FOOTER                                               -->
+    <!-- ================================================================= -->
     <footer class="relative bg-[#05070b] border-t border-white/[0.08] pt-12 md:pt-16 pb-12 overflow-hidden">
-      <!-- Ambient subtle background glow for mobile & desktop -->
+      <!-- Ambient subtle background glow -->
       <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-amber-500/[0.04] blur-3xl pointer-events-none"></div>
 
       <div class="relative z-10 w-full max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
 
-        <!-- ================================================================= -->
-        <!-- MOBILE VIEW: Dedicated Awesome Feature Hub (< md screens)         -->
-        <!-- ================================================================= -->
-        <div class="block md:hidden space-y-8 pb-10 border-b border-white/[0.08]">
+        <!-- Mobile In-Page Highlights Block (< md screens) -->
+        <div class="block md:hidden space-y-6 pb-8 border-b border-white/[0.08]">
           <!-- Mobile Brand & Title Header -->
           <div class="flex items-center gap-3.5">
-            <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500/25 via-zinc-900 to-black border border-amber-500/40 shadow-[0_0_20px_rgba(245,158,11,0.25)]">
-              <span class="font-mono font-extrabold text-base tracking-wider text-amber-400">
+            <div class="flex items-center justify-center w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-500/25 via-zinc-900 to-black border border-amber-500/40 shadow-[0_0_20px_rgba(245,158,11,0.25)]">
+              <span class="font-mono font-extrabold text-sm tracking-wider text-amber-400">
                 PB
               </span>
             </div>
             <div>
-              <h3 class="text-lg font-extrabold text-white tracking-tight">
+              <h3 class="text-base font-extrabold text-white tracking-tight">
                 {{ personalInfo.name }}
               </h3>
-              <p class="text-xs font-mono text-amber-400/90 font-medium">
-                Senior Full-Stack &amp; Lead Architect
+              <p class="text-xs font-mono text-amber-400 font-medium">
+                Senior Full-Stack Developer &amp; Lead Architect
               </p>
             </div>
           </div>
@@ -38,9 +117,9 @@ import { PERSONAL_INFO } from '../../data/portfolio-data';
           <!-- Status Beacon Card -->
           <div class="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="relative flex h-2.5 w-2.5">
+              <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               <span class="text-xs font-mono font-medium text-emerald-400">
                 Available for Senior Roles
@@ -51,139 +130,96 @@ import { PERSONAL_INFO } from '../../data/portfolio-data';
             </span>
           </div>
 
-          <!-- Key Portfolio Features Highlight Cards -->
-          <div class="space-y-2.5">
+          <!-- Key Architectural Highlights -->
+          <div class="space-y-2">
             <div class="text-[11px] font-mono uppercase tracking-widest text-slate-400 font-semibold flex items-center gap-1.5">
               <span class="text-amber-500">//</span>
-              <span>Core Architectural Highlights</span>
+              <span>Architectural Feats</span>
             </div>
 
-            <div class="grid grid-cols-2 gap-2.5">
-              <!-- Feature 1 -->
-              <div class="p-3 rounded-2xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/[0.07] flex flex-col justify-between">
-                <div class="flex items-center gap-1.5 text-amber-400 text-xs font-bold font-mono">
+            <div class="grid grid-cols-2 gap-2">
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07]">
+                <div class="flex items-center gap-1 text-amber-400 text-xs font-bold font-mono">
                   <app-icon name="globe" className="w-3.5 h-3.5"></app-icon>
-                  <span>AWS Multi-Region</span>
+                  <span>AWS 6-Region</span>
                 </div>
-                <p class="text-[11px] text-slate-300 mt-1 leading-tight font-sans">
-                  6 global regions &bull; 3 sharded SQL DBs &bull; -55% latency
+                <p class="text-[11px] text-slate-300 mt-1 leading-tight">
+                  3 sharded SQL DBs &bull; -55% latency
                 </p>
               </div>
 
-              <!-- Feature 2 -->
-              <div class="p-3 rounded-2xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/[0.07] flex flex-col justify-between">
-                <div class="flex items-center gap-1.5 text-cyan-400 text-xs font-bold font-mono">
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07]">
+                <div class="flex items-center gap-1 text-cyan-400 text-xs font-bold font-mono">
                   <app-icon name="video" className="w-3.5 h-3.5"></app-icon>
                   <span>TUS + FFmpeg</span>
                 </div>
-                <p class="text-[11px] text-slate-300 mt-1 leading-tight font-sans">
-                  Resumable 4K uploads &bull; Automated transcoding &bull; CDN
+                <p class="text-[11px] text-slate-300 mt-1 leading-tight">
+                  Resumable 4K &bull; Auto-transcode
                 </p>
               </div>
 
-              <!-- Feature 3 -->
-              <div class="p-3 rounded-2xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/[0.07] flex flex-col justify-between">
-                <div class="flex items-center gap-1.5 text-emerald-400 text-xs font-bold font-mono">
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07]">
+                <div class="flex items-center gap-1 text-emerald-400 text-xs font-bold font-mono">
                   <app-icon name="server" className="w-3.5 h-3.5"></app-icon>
                   <span>Custom DAM</span>
                 </div>
-                <p class="text-[11px] text-slate-300 mt-1 leading-tight font-sans">
-                  ₹1L/mo license saved &bull; 60+ EXIF fields &bull; Face focus
+                <p class="text-[11px] text-slate-300 mt-1 leading-tight">
+                  ₹1L/mo license saved &bull; EXIF GPS
                 </p>
               </div>
 
-              <!-- Feature 4 -->
-              <div class="p-3 rounded-2xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/[0.07] flex flex-col justify-between">
-                <div class="flex items-center gap-1.5 text-amber-300 text-xs font-bold font-mono">
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07]">
+                <div class="flex items-center gap-1 text-amber-300 text-xs font-bold font-mono">
                   <app-icon name="zap" className="w-3.5 h-3.5"></app-icon>
                   <span>SignalR Sockets</span>
                 </div>
-                <p class="text-[11px] text-slate-300 mt-1 leading-tight font-sans">
-                  18k+ concurrent connections &bull; &lt;15ms broadcast
+                <p class="text-[11px] text-slate-300 mt-1 leading-tight">
+                  18k+ sockets &bull; &lt;15ms latency
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Metric Strip -->
-          <div class="grid grid-cols-4 gap-1.5 py-3 px-2 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-center">
+          <!-- Metric Counters -->
+          <div class="grid grid-cols-4 gap-1 py-2.5 px-2 rounded-xl bg-white/[0.02] border border-white/[0.06] text-center">
             <div>
-              <div class="text-base font-extrabold text-amber-400 font-mono">5+</div>
-              <div class="text-[9px] font-mono text-slate-400 uppercase">Years Exp</div>
+              <div class="text-sm font-extrabold text-amber-400 font-mono">5+</div>
+              <div class="text-[9px] font-mono text-slate-400 uppercase">Years</div>
             </div>
             <div>
-              <div class="text-base font-extrabold text-white font-mono">25+</div>
+              <div class="text-sm font-extrabold text-white font-mono">25+</div>
               <div class="text-[9px] font-mono text-slate-400 uppercase">Projects</div>
             </div>
             <div>
-              <div class="text-base font-extrabold text-amber-400 font-mono">17mo</div>
+              <div class="text-sm font-extrabold text-amber-400 font-mono">17mo</div>
               <div class="text-[9px] font-mono text-slate-400 uppercase">To Lead</div>
             </div>
             <div>
-              <div class="text-base font-extrabold text-emerald-400 font-mono">100%</div>
+              <div class="text-sm font-extrabold text-emerald-400 font-mono">100%</div>
               <div class="text-[9px] font-mono text-slate-400 uppercase">Success</div>
             </div>
           </div>
 
-          <!-- Quick Action Buttons Hub for Mobile -->
-          <div class="space-y-2.5">
-            <div class="text-[11px] font-mono uppercase tracking-widest text-slate-400 font-semibold flex items-center gap-1.5">
-              <span class="text-amber-500">//</span>
-              <span>Quick Direct Actions</span>
-            </div>
-
-            <div class="grid grid-cols-2 gap-2.5">
-              <a
-                [href]="'mailto:' + personalInfo.email"
-                class="flex items-center justify-center gap-2 px-3 py-3 rounded-xl bg-amber-400 text-black font-semibold text-xs shadow-[0_0_20px_rgba(245,158,11,0.3)] active:scale-95 transition-all"
-              >
-                <app-icon name="mail" className="w-4 h-4"></app-icon>
-                <span>Email Pushpraj</span>
-              </a>
-
-              <a
-                [href]="'tel:' + personalInfo.phone"
-                class="flex items-center justify-center gap-2 px-3 py-3 rounded-xl bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.12] text-white font-semibold text-xs active:scale-95 transition-all"
-              >
-                <app-icon name="phone" className="w-4 h-4 text-emerald-400"></app-icon>
-                <span>Direct Call</span>
-              </a>
-
-              <a
-                [href]="personalInfo.resumePath"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-200 font-mono text-xs active:scale-95 transition-all"
-              >
-                <app-icon name="file-down" className="w-3.5 h-3.5 text-amber-400"></app-icon>
-                <span>Download CV</span>
-              </a>
-
-              <a
-                [href]="personalInfo.linkedin"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-200 font-mono text-xs active:scale-95 transition-all"
-              >
-                <app-icon name="linkedin" className="w-3.5 h-3.5 text-sky-400"></app-icon>
-                <span>LinkedIn</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Section Jump Pills -->
-          <div class="flex flex-wrap items-center gap-1.5 pt-2">
-            <span class="text-[10px] font-mono text-slate-500 mr-1">JUMP:</span>
-            <a href="#projects" class="px-2.5 py-1 rounded-lg bg-white/[0.04] text-[11px] font-mono text-slate-300 hover:text-amber-400">#projects</a>
-            <a href="#skills" class="px-2.5 py-1 rounded-lg bg-white/[0.04] text-[11px] font-mono text-slate-300 hover:text-amber-400">#skills</a>
-            <a href="#experience" class="px-2.5 py-1 rounded-lg bg-white/[0.04] text-[11px] font-mono text-slate-300 hover:text-amber-400">#experience</a>
-            <a href="#contact" class="px-2.5 py-1 rounded-lg bg-white/[0.04] text-[11px] font-mono text-slate-300 hover:text-amber-400">#contact</a>
+          <!-- Quick Connect Buttons -->
+          <div class="grid grid-cols-2 gap-2 pt-1">
+            <a
+              [href]="'mailto:' + personalInfo.email"
+              class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-amber-400 text-black font-semibold text-xs active:scale-95 transition-all"
+            >
+              <app-icon name="mail" className="w-3.5 h-3.5"></app-icon>
+              <span>Email</span>
+            </a>
+            <a
+              [href]="'tel:' + personalInfo.phone"
+              class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white/[0.08] text-white font-semibold text-xs active:scale-95 transition-all"
+            >
+              <app-icon name="phone" className="w-3.5 h-3.5 text-emerald-400"></app-icon>
+              <span>Call</span>
+            </a>
           </div>
         </div>
 
-        <!-- ================================================================= -->
-        <!-- DESKTOP VIEW: Clean 3-Column Architectural Layout (>= md screens) -->
-        <!-- ================================================================= -->
+        <!-- Desktop View (>= md screens) -->
         <div class="hidden md:grid md:grid-cols-12 gap-12 pb-12 border-b border-white/[0.08]">
           <!-- Brand & Monogram Column -->
           <div class="md:col-span-5 space-y-4">
@@ -292,27 +328,19 @@ import { PERSONAL_INFO } from '../../data/portfolio-data';
           </div>
         </div>
 
-        <!-- ================================================================= -->
-        <!-- BOTTOM CREDITS & TECHNICAL DIRECTIVES (Clean & Professional)      -->
-        <!-- ================================================================= -->
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
-          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-center sm:text-left">
-            <span>&copy; 2026 Pushpraj Singh Bhati. All rights reserved.</span>
-            <span class="text-slate-700 hidden sm:inline">&bull;</span>
-            <a href="sitemap.xml" class="hover:text-amber-400 transition-colors">Sitemap</a>
-            <span class="text-slate-700">&bull;</span>
-            <a href="llms.txt" class="hover:text-amber-400 transition-colors">LLMs.txt (AEO)</a>
-            <span class="text-slate-700">&bull;</span>
-            <a href="robots.txt" class="hover:text-amber-400 transition-colors">Robots.txt</a>
+        <!-- Clean Copyright (Without Technical or Bot Links) -->
+        <div class="pt-8 flex items-center justify-between text-xs font-mono text-slate-400">
+          <div>
+            &copy; 2026 Pushpraj Singh Bhati. All rights reserved.
           </div>
 
           <div>
             <button
               (click)="scrollToTop()"
-              class="sm:hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] border border-white/[0.1] text-[11px] font-mono text-slate-300"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.1] text-[11px] font-mono text-slate-300 transition-all cursor-pointer"
             >
               <span>Back to Top</span>
-              <app-icon name="arrow-up" className="w-3 h-3 text-amber-400"></app-icon>
+              <app-icon name="arrow-up" className="w-3.5 h-3.5 text-amber-400"></app-icon>
             </button>
           </div>
         </div>
@@ -336,6 +364,16 @@ export class FooterComponent {
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  handleMobileNavClick(event: Event, targetId: string) {
+    event.preventDefault();
+    if (typeof window !== 'undefined') {
+      const el = document.querySelector(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
 
   scrollToTop() {
     if (typeof window !== 'undefined') {
