@@ -1,110 +1,92 @@
-# AngularPortfolio
+# Pushpraj Singh Bhati | Senior Full-Stack Developer & Lead Architect
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.27.
+[![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-pushpraj2164.github.io-amber?style=for-the-badge&logo=google-chrome&logoColor=white)](https://pushpraj2164.github.io/PSingh-Portfolio/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pushpraj%20Singh%20Bhati-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/pushprajsinghbhati)
+[![GitHub](https://img.shields.io/badge/GitHub-pushpraj2164-181717?style=for-the-badge&logo=github)](https://github.com/pushpraj2164)
+[![Email](https://img.shields.io/badge/Email-pushprajbhati2164%40gmail.com-ea4335?style=for-the-badge&logo=gmail)](mailto:pushprajbhati2164@gmail.com)
 
-## Development server
+> 🚀 **Live Production Portfolio:** [https://pushpraj2164.github.io/PSingh-Portfolio/](https://pushpraj2164.github.io/PSingh-Portfolio/)
 
-To start a local development server, run:
+---
 
+## 👨‍💻 About Pushpraj Singh Bhati
+
+Senior Full-Stack Engineer, Lead Architect & Project Manager with nearly 4 years building resilient, high-throughput web applications in **Angular**, **TypeScript**, **C#**, **.NET Core**, **SQL Server**, and **AWS Multi-Region** architecture.
+
+- **Fast-Track Leadership:** Promoted from Frontend Developer to Senior Programmer in 17 months, then to Project Manager & Lead Engineer heading an engineering team of 4 while remaining deeply hands-on in code review and systems architecture.
+- **AWS Cloud Scale:** Designed a region-aware cloud architecture on AWS serving 6 international regions (UK, US, Asia) from 3 distributed SQL Server databases using a single, unified codebase, reducing cross-continental latency by **55%**.
+- **Commercial Impact:** Replaced expensive third-party Syncfusion licensing with a bespoke in-house Digital Asset Management system, saving **₹1 Lakh / month** (~$14,000/year).
+- **Real-Time Systems:** Engineered a bidirectional real-time push layer with ASP.NET Core SignalR and WebSockets managing **18,000+ persistent connections** with sub-15ms broadcast latency.
+- **Resilient Media:** Built a production-grade TUS protocol resumable upload engine paired with automated server-side FFmpeg transcoding to MP4/WebM.
+
+---
+
+## 🛠️ Core Technical Competencies
+
+- **Frontend:** Angular (v12 through v19), TypeScript, RxJS, Tailwind CSS, SCSS, GSAP Animations, WebP Image Optimization, Core Web Vitals, Responsive Design.
+- **Backend & APIs:** C#, .NET Core 6/7/8/9, ASP.NET Core Web API, Entity Framework Core, Dapper, Microservices, CQRS, RESTful APIs, JWT Auth, RBAC.
+- **Database:** Microsoft SQL Server (MSSQL), T-SQL, Database Sharding, Dynamic Routing, High-Throughput Batch Upserts, Index Profiling.
+- **Cloud & DevOps:** AWS (EC2, S3, RDS, CloudFront, Route 53), Bunny CDN, Docker, CI/CD (GitHub Actions), Brotli & Gzip Pre-Compression.
+- **FinTech & Payments:** Multi-Gateway Billing (Stripe API, Cashfree UPI/Cards, Apple In-App Purchases / StoreKit), Webhooks.
+
+---
+
+## 📂 Key Production Projects
+
+1. **[Noosom Global Life-Story Platform](https://pushpraj2164.github.io/PSingh-Portfolio/#projects):** AWS multi-region distributed platform across 6 regions and 3 distributed SQL Server databases with unified GlobalUserId identity.
+2. **[Resumable TUS & FFmpeg Media Pipeline](https://pushpraj2164.github.io/PSingh-Portfolio/#projects):** Resumable chunk upload engine with mobile fault-tolerance and automated FFmpeg server-side transcoding.
+3. **[Enterprise Media File Manager (DAM)](https://pushpraj2164.github.io/PSingh-Portfolio/#projects):** In-house digital asset manager extracting 50-60 EXIF/GPS fields, smart face cropping, and Bunny CDN caching.
+4. **[Centralized Enterprise Governance Console](https://pushpraj2164.github.io/PSingh-Portfolio/#projects):** Mission-control admin portal in Angular and EF Core with role-based access control and dynamic regional routing.
+5. **[Global Multi-Gateway Monetization Engine](https://pushpraj2164.github.io/PSingh-Portfolio/#projects):** Unified billing core for Cashfree (UPI/Cards), Stripe, and Apple StoreKit with sub-second webhooks.
+6. **[Real-Time SignalR & WebSocket Layer](https://pushpraj2164.github.io/PSingh-Portfolio/#projects):** Low-latency bidirectional push architecture eliminating client polling across 18k+ concurrent sockets.
+
+---
+
+## ⚡ Performance & Optimization Architecture
+
+This portfolio features enterprise-grade web optimization:
+- **100% WebP Images:** Reduced total image payload from 7.42 MB to ~717 KB (**90.6% reduction**).
+- **Dual Pre-Compression:** Automated build-time **Gzip level 9** and **Brotli quality 11** compression reducing bundle size by **74%**.
+- **Instant Core Web Vitals:** Native lazy loading (`loading="lazy"`, `decoding="async"`), eager LCP prefetching, and `content-visibility: auto` on below-the-fold DOM trees.
+- **Complete AEO & SEO:** Schema.org JSON-LD multi-entity graphs (`Person`, `ProfilePage`, `WebSite`, `ItemList`, `FAQPage`), Google Images XML sitemap, `robots.txt`, and AI context via `llms.txt`.
+
+---
+
+## 💻 Local Development & Build
+
+### Development server
 ```bash
-ng serve
+npm install
+npm start
+# Navigate to http://localhost:4200/
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building & Asset Compression
-
-To build the project for production:
-
+### Production Build & Pre-Compression
 ```bash
 npm run build
+# Outputs to dist/angular-portfolio/browser and automatically generates .gz and .br assets
 ```
 
-The build process includes an automatic `postbuild` hook that generates:
-- **Gzip pre-compressed assets** (`.gz`, level 9 maximum compression)
-- **Brotli pre-compressed assets** (`.br`, quality 11 maximum compression)
-
-This reduces the JS/CSS/HTML transfer payload by up to **74%**.
-
-To manually run compression on the build output:
-```bash
-npm run compress
-```
-
-## Image Optimization (WebP)
-
-All portfolio and project images have been converted to high-efficiency **WebP** format, reducing initial asset weight from 7.4 MB down to ~717 KB (over **90% reduction**):
-- Profile image: `pushpraj-photo.webp` (72 KB vs 1.85 MB)
-- All 6 project mockups: `projects/*.webp` (~60-115 KB each vs ~500-700 KB)
-
-To optimize or reconvert newly added images to WebP at any time:
-```bash
-npm run convert:webp
-```
-
-## Production Preview Server (Gzip & Brotli Verified)
-
-To test the production build locally with native Brotli (`Content-Encoding: br`) and Gzip (`Content-Encoding: gzip`) HTTP response streaming:
-
+### Production Preview Server (Gzip & Brotli HTTP Verified)
 ```bash
 npm run preview
-# or: npm run serve:prod
+# Serves production build locally with native Content-Encoding: br / gzip negotiation
 ```
 
-Navigate to `http://localhost:4200` to preview the production build.
-
-## Production Server Deployment (Nginx / Cloudflare / Netlify)
-
-- **Nginx**: A pre-configured [`nginx.conf`](./nginx.conf) is included with `brotli_static on;` and `gzip_static on;` directives for zero-CPU static serving.
-- **Netlify / Cloudflare Pages**: Cache rules and security headers are included in [`public/_headers`](./public/_headers).
-
-## SEO & Answer Engine Optimization (AEO / GEO)
-
-This portfolio is heavily optimized for both classical Search Engines (Google, Bing) and AI Answer Engines (ChatGPT / SearchGPT, Perplexity AI, Google Gemini, Claude, Copilot):
-
-- **Structured JSON-LD (Schema.org)**: Complete multi-entity graph including `Person`, `ProfilePage`, `WebSite`, `ItemList` (projects), and `FAQPage` (for instant AI citation).
-- **Robots.txt**: Explicit allow rules for Googlebot, Bingbot, and AI answer bots (`GPTBot`, `ChatGPT-User`, `Google-Extended`, `PerplexityBot`, `ClaudeBot`, `Applebot-Extended`, etc.).
-- **Sitemap with Google Images**: Full `sitemap.xml` with `<image:image>` tags indexing the profile photo and all 6 project showcases.
-- **AI Context Protocols**: Root `llms.txt` and `llms-full.txt` files providing structured context for LLM crawlers.
-- **Semantic Crawlable Fallback**: Non-JS search bots receive full semantic HTML content inside `<app-root>` before Angular client-side hydration.
-
-To run the automated SEO/AEO audit suite:
+### Automated SEO / AEO Audit
 ```bash
 npm run validate:seo
 ```
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📬 Contact & Connect
 
-```bash
-ng test
-```
+- **Portfolio:** [https://pushpraj2164.github.io/PSingh-Portfolio/](https://pushpraj2164.github.io/PSingh-Portfolio/)
+- **Email:** [pushprajbhati2164@gmail.com](mailto:pushprajbhati2164@gmail.com)
+- **Phone:** +91 79878 04424
+- **LinkedIn:** [linkedin.com/in/pushprajsinghbhati](https://linkedin.com/in/pushprajsinghbhati)
+- **GitHub:** [github.com/pushpraj2164](https://github.com/pushpraj2164)
+- **Location:** Ahmedabad, Gujarat, India (Open to global remote & relocation)
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+&copy; 2026 Pushpraj Singh Bhati. All rights reserved.
