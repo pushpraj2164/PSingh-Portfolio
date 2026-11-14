@@ -1,5 +1,5 @@
 # ==============================================================================
-# robots.txt for Pushpraj Singh Bhati Portfolio (https://pushprajsinghbhati.dev)
+# robots.txt for Pushpraj Singh Bhati Portfolio (https://pushpraj2164.github.io/PSingh-Portfolio/)
 # Optimized for Search Engine Optimization (SEO) & AI / Answer Engine Optimization (AEO)
 # ==============================================================================
 
