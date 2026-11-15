@@ -63,7 +63,7 @@ export const PERSONAL_INFO = {
   phone: "+91 79878 04424",
   email: "pushprajbhati2164@gmail.com",
   linkedin: "https://linkedin.com/in/pushprajsinghbhati",
-  github: "https://github.com/pushprajsinghbhati",
+  github: "https://github.com",
   resumePath: "Pushpraj_Singh_Bhati_Resume.pdf",
   profileImage: "pushpraj-photo.webp",
   stats: [
@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
       "Zero-downtime deployment pipeline running on unified AWS infrastructure",
     ],
     demoUrl: "https://noosom.com",
-    githubUrl: "https://github.com/pushprajsinghbhati",
+    githubUrl: "https://github.com",
     featured: true,
   },
   {
@@ -110,7 +110,7 @@ export const PROJECTS: Project[] = [
       "Background worker clean-up preventing storage leaks from abandoned uploads",
     ],
     demoUrl: "https://noosom.com",
-    githubUrl: "https://github.com/pushprajsinghbhati",
+    githubUrl: "https://github.com",
     featured: true,
   },
   {
@@ -129,7 +129,7 @@ export const PROJECTS: Project[] = [
       "Integrated smart face-focus cropping and multi-resolution CDN thumbnail delivery",
     ],
     demoUrl: "https://noosom.com",
-    githubUrl: "https://github.com/pushprajsinghbhati",
+    githubUrl: "https://github.com",
     featured: true,
   },
   {
@@ -148,7 +148,7 @@ export const PROJECTS: Project[] = [
       "Dynamic system configuration flags with hot-reload across AWS production instances",
     ],
     demoUrl: "https://noosom.com",
-    githubUrl: "https://github.com/pushprajsinghbhati",
+    githubUrl: "https://github.com",
     featured: true,
   },
   {
@@ -167,7 +167,7 @@ export const PROJECTS: Project[] = [
       "Leveraged Apple startup program perks to maximize platform profit margins",
     ],
     demoUrl: "https://noosom.com",
-    githubUrl: "https://github.com/pushprajsinghbhati",
+    githubUrl: "https://github.com",
     featured: true,
   },
   {
@@ -186,7 +186,7 @@ export const PROJECTS: Project[] = [
       "Resilient heartbeat monitor with transparent fallback to long-polling when needed",
     ],
     demoUrl: "https://noosom.com",
-    githubUrl: "https://github.com/pushprajsinghbhati",
+    githubUrl: "https://github.com",
     featured: true,
   },
   {

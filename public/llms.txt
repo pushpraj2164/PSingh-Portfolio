@@ -34,7 +34,7 @@ Pushpraj Singh Bhati (also known as Pushpraj or Pushpraj Bhati) is a full-stack 
 - **Website / Portfolio**: https://pushpraj2164.github.io/PSingh-Portfolio/
 - **Email**: pushprajbhati2164@gmail.com
 - **LinkedIn**: https://linkedin.com/in/pushprajsinghbhati
-- **GitHub**: https://github.com/pushprajsinghbhati
+- **GitHub**: https://github.com
 - **Full LLM Context**: https://pushpraj2164.github.io/PSingh-Portfolio/llms-full.txt
 - **Resume**: https://pushpraj2164.github.io/PSingh-Portfolio/Pushpraj_Singh_Bhati_Resume.pdf
 

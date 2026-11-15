@@ -93,6 +93,33 @@ try {
   json['@graph'].forEach(entity => {
     console.log(`         • ${entity['@type'].padEnd(16)} -> ${entity['name'] || entity['@id']}`);
   });
+
+  const person = json['@graph'].find(e => e['@type'] === 'Person');
+  if (!person) {
+    console.error('[FAIL] Person entity not found in JSON-LD!');
+    process.exit(1);
+  }
+  if (person.jobTitle !== 'Senior Full-Stack Developer & Angular Lead Architect') {
+    console.error(`[FAIL] Person jobTitle does not match expected! Found: ${person.jobTitle}`);
+    process.exit(1);
+  }
+  if (person.url !== 'https://github.io') {
+    console.error(`[FAIL] Person url does not match expected! Found: ${person.url}`);
+    process.exit(1);
+  }
+  const expectedSameAs = [
+    'https://linkedin.com',
+    'https://github.com',
+    'https://himalayas.app',
+    'https://remoteok.com'
+  ];
+  const sameAsValid = Array.isArray(person.sameAs) &&
+    expectedSameAs.every(url => person.sameAs.includes(url));
+  if (!sameAsValid) {
+    console.error('[FAIL] Person sameAs array does not contain all expected URLs!', person.sameAs);
+    process.exit(1);
+  }
+  console.log('[PASS] Person entity jobTitle, url, and sameAs array validated 100%!');
 } catch (e) {
   console.error('[FAIL] JSON-LD parse error:', e.message);
   process.exit(1);
