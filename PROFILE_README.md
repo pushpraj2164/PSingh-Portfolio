@@ -35,3 +35,4 @@
 - 💼 **LinkedIn:** [linkedin.com/in/pushprajsinghbhati](https://linkedin.com/in/pushprajsinghbhati)
 - 📧 **Email:** [pushprajbhati2164@gmail.com](mailto:pushprajbhati2164@gmail.com)
 - 📍 **Location:** Ahmedabad, Gujarat, India (Open to global remote and relocation)
+

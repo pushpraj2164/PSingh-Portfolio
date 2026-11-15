@@ -14,11 +14,15 @@ if (!fs.existsSync(robotsPath)) {
   process.exit(1);
 }
 const robotsTxt = fs.readFileSync(robotsPath, 'utf8');
-if (!robotsTxt.includes('GPTBot') || !robotsTxt.includes('PerplexityBot') || !robotsTxt.includes('sitemap.xml')) {
-  console.error('[FAIL] robots.txt missing key AI crawlers or sitemap!');
+if (!robotsTxt.includes('Sitemap: https://pushpraj2164.github.io/PSingh-Portfolio/sitemap.xml')) {
+  console.error('[FAIL] robots.txt missing correct Sitemap URL directive!');
   process.exit(1);
 }
-console.log('[PASS] robots.txt validated (contains AI bots, Googlebot, Bingbot, Sitemap)');
+if (!robotsTxt.includes('GPTBot') || !robotsTxt.includes('PerplexityBot')) {
+  console.error('[FAIL] robots.txt missing key AI crawlers!');
+  process.exit(1);
+}
+console.log('[PASS] robots.txt validated (contains exact Sitemap directive, AI bots, Googlebot)');
 
 // 2. Verify sitemap.xml
 if (!fs.existsSync(sitemapPath)) {
@@ -26,11 +30,26 @@ if (!fs.existsSync(sitemapPath)) {
   process.exit(1);
 }
 const sitemapXml = fs.readFileSync(sitemapPath, 'utf8');
+
+// Check XML declaration
+if (!sitemapXml.trimStart().startsWith('<?xml version="1.0" encoding="UTF-8"?>')) {
+  console.error('[FAIL] sitemap.xml is missing <?xml version="1.0" encoding="UTF-8"?> declaration!');
+  process.exit(1);
+}
+
+// Check for unescaped ampersands
+const unescapedAmp = sitemapXml.match(/&(?!(amp|lt|gt|quot|apos|#\d+|#x[0-9a-fA-F]+);)/g);
+if (unescapedAmp && unescapedAmp.length > 0) {
+  console.error(`[FAIL] sitemap.xml contains ${unescapedAmp.length} unescaped '&' characters!`);
+  process.exit(1);
+}
+
+// Check required schema and root loc
 if (!sitemapXml.includes('<loc>https://pushpraj2164.github.io/PSingh-Portfolio/</loc>') || !sitemapXml.includes('<image:image>')) {
   console.error('[FAIL] sitemap.xml missing root URL or images!');
   process.exit(1);
 }
-console.log('[PASS] sitemap.xml validated (valid XML with root URL and Google Images schema)');
+console.log('[PASS] sitemap.xml validated (valid XML declaration, zero unescaped entities, root URL & image schema)');
 
 // 3. Verify llms.txt
 if (!fs.existsSync(llmsPath)) {
