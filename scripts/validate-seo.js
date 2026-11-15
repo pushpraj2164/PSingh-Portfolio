@@ -49,7 +49,22 @@ if (!sitemapXml.includes('<loc>https://pushpraj2164.github.io/PSingh-Portfolio/<
   console.error('[FAIL] sitemap.xml missing root URL or images!');
   process.exit(1);
 }
-console.log('[PASS] sitemap.xml validated (valid XML declaration, zero unescaped entities, root URL & image schema)');
+
+// Verify that every image:loc file exists in dist
+const imageLocMatches = [...sitemapXml.matchAll(/<image:loc>https:\/\/pushpraj2164\.github\.io\/PSingh-Portfolio\/(.*?)<\/image:loc>/g)];
+if (imageLocMatches.length === 0) {
+  console.error('[FAIL] No image:loc entries found in sitemap.xml!');
+  process.exit(1);
+}
+for (const match of imageLocMatches) {
+  const relativeImagePath = match[1];
+  const fullImagePath = path.join(__dirname, '..', 'dist', 'angular-portfolio', 'browser', relativeImagePath);
+  if (!fs.existsSync(fullImagePath)) {
+    console.error(`[FAIL] Image referenced in sitemap does not exist in dist: ${relativeImagePath}`);
+    process.exit(1);
+  }
+}
+console.log(`[PASS] sitemap.xml validated (valid XML declaration, ${imageLocMatches.length} existing images, zero deprecated tags)`);
 
 // 3. Verify llms.txt
 if (!fs.existsSync(llmsPath)) {
